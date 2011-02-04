@@ -16,6 +16,47 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `clientes`
+--
+
+DROP TABLE IF EXISTS `clientes`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `clientes` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `usuario_id` int(11) NOT NULL,
+  `nome` varchar(100) NOT NULL,
+  `razao_social` varchar(100) DEFAULT NULL,
+  `contato` varchar(100) DEFAULT NULL,
+  `email` varchar(120) DEFAULT NULL,
+  `telefone1` varchar(13) DEFAULT NULL,
+  `telefone2` varchar(13) DEFAULT NULL,
+  `celular` varchar(13) DEFAULT NULL,
+  `cpf` varchar(14) DEFAULT NULL,
+  `cnpj` varchar(18) DEFAULT NULL,
+  `logradouro` varchar(140) DEFAULT NULL,
+  `numero` varchar(10) DEFAULT NULL,
+  `complemento` varchar(120) DEFAULT NULL,
+  `bairro` varchar(120) DEFAULT NULL,
+  `cidade` varchar(120) DEFAULT NULL,
+  `estado` varchar(20) DEFAULT NULL,
+  `cep` varchar(9) DEFAULT NULL,
+  `documento` varchar(20) DEFAULT NULL,
+  `datahora` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `clientes`
+--
+
+LOCK TABLES `clientes` WRITE;
+/*!40000 ALTER TABLE `clientes` DISABLE KEYS */;
+/*!40000 ALTER TABLE `clientes` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `usuarios`
 --
 
@@ -29,7 +70,7 @@ CREATE TABLE `usuarios` (
   `email` varchar(120) NOT NULL,
   `senha` varchar(32) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,6 +79,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
+INSERT INTO `usuarios` VALUES (1,'admin','Administrador','adm@aligatoro.com','e10adc3949ba59abbe56e057f20f883e');
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -50,4 +92,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2011-02-02 16:36:41
+-- Dump completed on 2011-02-04  9:23:24
