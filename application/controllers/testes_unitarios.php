@@ -17,6 +17,7 @@
  * @property CI_Input       $input
  * @property CI_Unit_test   $unit
  * @property Usuarios_model $usuarios_model
+ * @property Clientes_model $clientes_model
  */
 class Testes_unitarios extends CI_Controller {
     public function __construct() {
@@ -44,6 +45,21 @@ class Testes_unitarios extends CI_Controller {
         unset($usuario);
 
         // Fim dos testes da model Usuarios_model
+
+        // Iniciando os testes da model Clientes_model
+        $this->load->model('clientes_model');
+
+        $cliente = $this->clientes_model->pegar_ultimos_cadastrados(1);
+
+        $this->unit->run(count($cliente), 1, 'Retornar ultimo cliente cadastrado');
+
+        $clientes = $this->clientes_model->pegar_ultimos_cadastrados(2);
+
+        $this->unit->run(count($clientes), 2, 'Retornar dois ultimos clientes cadastrados');
+
+        unset($cliente, $clientes);
+
+        // Fim dos testes da model Clientes_model
 
         echo $this->unit->report();
     }

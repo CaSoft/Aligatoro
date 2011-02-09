@@ -1,0 +1,47 @@
+#corpo {
+    width: 950px;
+    margin: 20px auto;
+}
+
+#conteudo form label {
+    display: block;
+    font-size: 12px;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+#conteudo form label input {
+    display: block;
+    font-size: 18px;
+    font-family: sans-serif;
+    border: 1px solid #777;
+    width: 50%;
+}
+
+#conteudo form fieldset {
+    border: 1px solid #777;
+    padding: 10px;
+    margin: 10px 0px;
+}
+
+#conteudo form fieldset legend {
+    border-right: 4px double #777;
+    border-left: 4px double #777;
+}
+
+.div_direita {
+    text-align: right;
+}
+
+#conteudo table {
+    width: 95%;
+    margin: 10px auto;
+    border-collapse: collapse;
+}
+
+#conteudo table thead {
+    font-weight: bold;
+    font-size: 18px;
+    background-color: #DDD;
+}

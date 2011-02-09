@@ -8,6 +8,7 @@
         <link rel="shortcut icon" href="<?php echo site_url(); ?>img/icon.gif" />
         
         <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="<?php echo site_url(); ?>css/yahoo.css" />
         <link rel="stylesheet" type="text/css" href="<?php echo site_url(); ?>css/aligatoro.css" />
         <!-- / CSS -->
     </head>
@@ -29,9 +30,9 @@
                <?php $this->load->view($menu); ?>
             </div><!-- menu_lateral -->
             <div id="conteudo">
-                <?php if (isset($informativo)) : ?>
+                <?php if ($this->session->flashdata('informativo')) : ?>
                     <div id="informativo">
-                        <?php echo $informativo; ?>
+                        <?php echo $this->session->flashdata('informativo'); ?>
                     </div>
                 <?php endif; ?>
                 <?php $this->load->view($view); ?>
@@ -44,7 +45,15 @@
     <script type="text/javascript">
         $(document).ready( function() {
             $('#informativo').delay(4000).hide('slow');
+
+            $('tbody tr:odd').css('background-color', '#EEE');
         });
     </script>
+
+    <?php if (isset($javascript)) : ?>
+        <?php foreach($javascript as $script) : ?>
+            <script src="<?php echo site_url() ?>js/<?php echo $script; ?>.js" type="text/javascript"></script>
+        <?php endforeach; ?>
+    <?php endif; ?>
     <!-- / Javascript -->
 </html>
