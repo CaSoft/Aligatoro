@@ -22,7 +22,11 @@ class Painel extends MY_Controller {
     }
 
     public function index() {
-        $this->load->view('index');
+        $this->data['titulo_pagina'] = 'Painel';
+        $this->data['view'] = 'painel/index';
+        $this->data['menu'] = 'painel/menus/index';
+
+        $this->load->view('index', $this->data);
     }
 }
 
