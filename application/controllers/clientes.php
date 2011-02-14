@@ -18,7 +18,7 @@
  * @property CI_Session             $session
  * @property Clientes_model         $clientes_model
  */
-class Clientes extends CI_Controller {
+class Clientes extends MY_Controller {
     public function __construct() {
         parent::__construct();
     }

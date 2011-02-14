@@ -40,9 +40,9 @@ class Login extends CI_Controller {
             $this->load->model('usuarios_model');
             if ($this->usuarios_model->autenticar($this->input->post('login'), $this->input->post('senha'))) {
                 // Login funcionou
-                $sessao = array('usuario' => $this->usuarios_model->pegar_dados_sessao($this->input->post('login')));
+                $sessao = $this->usuarios_model->pegar_dados_sessao($this->input->post('login'));
 
-                $this->session->set_userdata($sessao);
+                $this->session->set_userdata('usuario', $sessao);
 
                 redirect(site_url().'painel');
             }
