@@ -42,9 +42,10 @@ CREATE TABLE `clientes` (
   `estado` varchar(20) DEFAULT NULL,
   `cep` varchar(9) DEFAULT NULL,
   `documento` varchar(20) DEFAULT NULL,
+  `observacoes` text,
   `datahora` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -53,6 +54,7 @@ CREATE TABLE `clientes` (
 
 LOCK TABLES `clientes` WRITE;
 /*!40000 ALTER TABLE `clientes` DISABLE KEYS */;
+INSERT INTO `clientes` VALUES (1,0,'Maria das Dores','','','maria@dasdores.com','(13)3377-7733','','','','','','','','','','','','',NULL,'0000-00-00 00:00:00'),(2,0,'João da Silva','','','','','','','','','','','','','','','','',NULL,'0000-00-00 00:00:00'),(3,0,'Ana Maria Silva','','Teste','anamaria@silva.com','(13)7788-8899','','','','','Rua das Margaridas','','','','','','','','Nova cliente, com observações no cadastro.','0000-00-00 00:00:00'),(4,0,'Carlos Manoel','','','carlos@email.com','(13)7777-9999','','','','','','','','','','','','','Novo cliente, com data e hora de cadastro automático.','2011-02-14 04:14:22');
 /*!40000 ALTER TABLE `clientes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -92,4 +94,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2011-02-04  9:23:24
+-- Dump completed on 2011-02-14 16:28:24
