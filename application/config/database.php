@@ -57,6 +57,22 @@ $db['default']['swap_pre'] = '';
 $db['default']['autoinit'] = TRUE;
 $db['default']['stricton'] = FALSE;
 
+$db['beta']['hostname'] = 'sql.casoft.info';
+$db['beta']['username'] = 'aligatoro';
+$db['beta']['password'] = 'aligatoro';
+$db['beta']['database'] = 'aligatoro';
+$db['beta']['dbdriver'] = 'mysql';
+$db['beta']['dbprefix'] = '';
+$db['beta']['pconnect'] = TRUE;
+$db['beta']['db_debug'] = TRUE;
+$db['beta']['cache_on'] = FALSE;
+$db['beta']['cachedir'] = '';
+$db['beta']['char_set'] = 'utf8';
+$db['beta']['dbcollat'] = 'utf8_general_ci';
+$db['beta']['swap_pre'] = '';
+$db['beta']['autoinit'] = TRUE;
+$db['beta']['stricton'] = FALSE;
+
 
 /* End of file database.php */
 /* Location: ./application/config/database.php */

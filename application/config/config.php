@@ -16,6 +16,9 @@
 */
 $config['base_url']	= 'http://aligatoro/';
 
+// Beta
+//$config['base_url']	= 'http://dev.casoft.info/aligatoro/';
+
 /*
 |--------------------------------------------------------------------------
 | Index File
