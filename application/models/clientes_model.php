@@ -29,6 +29,20 @@ class Clientes_model extends CI_Model {
     }
 
     /**
+     * Função para pesquisaer clientes
+     *
+     * @param string $campo
+     * @param string $valor
+     * @return array
+     */
+    public function pesquisar_clientes($campo, $valor) {
+        $this->db->like($campo, $valor);
+        $query = $this->db->get('clientes');
+
+        return $query->result_array();
+    }
+
+    /**
      * Esta função retorna os últimos clientes cadastrados
      *
      * @param integer $numero Número de cadastros a retornar

@@ -29,7 +29,15 @@ class Clientes extends CI_Controller {
         $this->data['menu'] = 'clientes/menus/index';
 
         $this->load->model('clientes_model');
-        $this->data['clientes'] = $this->clientes_model->pegar_ultimos_cadastrados(10);
+
+        if ($this->input->post('texto_pesquisa_clientes')) {
+            $this->data['texto_pesquisa_clientes'] = $this->input->post('texto_pesquisa_clientes');
+            $this->data['clientes'] = $this->clientes_model->pesquisar_clientes($this->input->post('tipo_pesquisa_clientes'), $this->input->post('texto_pesquisa_clientes'));
+        }
+        else {
+            $this->data['texto_pesquisa_clientes'] = '';
+            $this->data['clientes'] = $this->clientes_model->pegar_ultimos_cadastrados(10);
+        }
 
         $this->load->view('index', $this->data);
     }
