@@ -54,6 +54,8 @@ class Clientes extends CI_Controller {
             'clientes/formulario'
         );
 
+        $this->data['cliente'] = $this->_cliente_vazio();
+
         $this->load->view('index', $this->data);
     }
 
@@ -73,6 +75,21 @@ class Clientes extends CI_Controller {
         $this->load->view('index', $this->data);
     }
 
+    public function editar($cliente_id) {
+        $this->data['titulo_pagina'] = 'Edição de cadastro de cliente';
+        $this->data['view'] = 'clientes/formulario';
+        $this->data['menu'] = 'clientes/menus/formulario';
+
+        $this->data['javascript'] = array(
+            'clientes/formulario'
+        );
+
+        $this->load->model('clientes_model');
+        $this->data['cliente'] = $this->clientes_model->pegar_cliente($cliente_id);
+
+        $this->load->view('index', $this->data);
+    }
+
     /**
      * Função que grava os dados do cliente
      *
@@ -84,13 +101,20 @@ class Clientes extends CI_Controller {
 
         $this->load->model('clientes_model');
 
-        $this->clientes_model->gravar($cliente);
+        $cliente['id'] = $this->clientes_model->gravar($cliente);
 
-        $this->session->set_flashdata(array(
-            'informativo' => 'Cliente adicionado com sucesso!'
-        ));
+        if ($this->input->post('id') != '0') {
+            $this->session->set_flashdata(array(
+                'informativo' => 'Cliente atualizado com sucesso!'
+            ));
+        }
+        else {
+            $this->session->set_flashdata(array(
+                'informativo' => 'Cliente adicionado com sucesso!'
+            ));
+        }
 
-        redirect(site_url().'clientes');
+        redirect(site_url().'clientes/dados/'.$cliente['id']);
     }
 
     /**
@@ -119,6 +143,36 @@ class Clientes extends CI_Controller {
             'cnpj'          => $this->input->post('cnpj'),
             'documento'     => $this->input->post('documento'),
             'observacoes'   => $this->input->post('observacoes')
+        );
+        return $cliente;
+    }
+
+    /**
+     * Esta função retorna um array com dados vazios para um cliente
+     *
+     * @return array
+     */
+    private function _cliente_vazio() {
+        $cliente = array(
+            'id'            => '0',
+            'nome'          => '',
+            'telefone1'     => '',
+            'email'         => '',
+            'contato'       => '',
+            'telefone2'     => '',
+            'celular'       => '',
+            'logradouro'    => '',
+            'numero'        => '',
+            'complemento'   => '',
+            'bairro'        => '',
+            'cidade'        => '',
+            'estado'        => '',
+            'cep'           => '',
+            'razao_social'  => '',
+            'cpf'           => '',
+            'cnpj'          => '',
+            'documento'     => '',
+            'observacoes'   => ''
         );
         return $cliente;
     }

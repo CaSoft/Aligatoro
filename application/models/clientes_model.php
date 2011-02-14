@@ -23,9 +23,20 @@ class Clientes_model extends CI_Model {
      * Função para gravar os dados de um clientes.
      *
      * @param array $cliente Dados do cliente a ser cadastrado no banco
+     * @return integer
      */
     public function gravar($cliente) {
-        $this->db->insert('clientes', $cliente);
+        if ($cliente['id'] == '0') {
+            $cliente['datahora'] = date('Y-m-d h:j:s');
+            $this->db->insert('clientes', $cliente);
+            $cliente['id'] = $this->db->insert_id();
+        }
+        else {
+            $this->db->where('id', $cliente['id']);
+            $this->db->update('clientes', $cliente);
+        }
+
+        return $cliente['id'];
     }
 
     /**
