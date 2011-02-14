@@ -43,6 +43,19 @@ class Clientes_model extends CI_Model {
     }
 
     /**
+     * Esta função pega os dados de um cliente
+     *
+     * @param integer $id
+     * @return array
+     */
+    public function pegar_cliente($id) {
+        $this->db->where('id', $id);
+        $query = $this->db->get('clientes');
+
+        return $query->row_array();
+    }
+
+    /**
      * Esta função retorna os últimos clientes cadastrados
      *
      * @param integer $numero Número de cadastros a retornar

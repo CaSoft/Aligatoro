@@ -23,7 +23,11 @@
                 <td><?php echo $cliente['nome']; ?></td>
                 <td><?php echo $cliente['telefone1']; ?></td>
                 <td><?php echo $cliente['email']; ?></td>
-                <td></td>
+                <td>
+                    <a href="<?php echo site_url(); ?>clientes/dados/<?php echo $cliente['id']; ?>" title="Ver dados do cliente">
+                        <img src="<?php echo site_url(); ?>img/icones/ver.png" alt="Ver dados do cliente" />
+                    </a>
+                </td>
             </tr>
         <?php endforeach; ?>
     </tbody>

@@ -57,6 +57,10 @@ class Testes_unitarios extends CI_Controller {
 
         $this->unit->run(count($clientes), 2, 'Retornar dois ultimos clientes cadastrados');
 
+        $cliente = $this->clientes_model->pegar_cliente(1); // Teste com a cliente Maria das Dores
+
+        $this->unit->run($cliente['nome'], 'Maria das Dores', 'Retornar um cliente específico');
+
         unset($cliente, $clientes);
 
         // Fim dos testes da model Clientes_model

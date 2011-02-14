@@ -14,6 +14,9 @@
         <label for="email">E-mail:
             <input type="text" name="email" id="email" />
         </label>
+        <label for="observacoes">Observações:
+            <textarea name="observacoes" id="observacoes" rows="" cols=""></textarea>
+        </label>
     </fieldset>
     <div class="div_direita">
         <input type="button" id="btn_exibir_endereco" value="Exibir endereço" />

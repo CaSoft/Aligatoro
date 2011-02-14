@@ -42,6 +42,9 @@ class Clientes extends CI_Controller {
         $this->load->view('index', $this->data);
     }
 
+    /**
+     * Exibe o formulário para cadastro de novo clientes
+     */
     public function novo() {
         $this->data['titulo_pagina'] = 'Cadastro de cliente';
         $this->data['view'] = 'clientes/formulario';
@@ -54,6 +57,28 @@ class Clientes extends CI_Controller {
         $this->load->view('index', $this->data);
     }
 
+    /**
+     * Esta função exibe os dados do cliente
+     *
+     * @param integer $cliente_id
+     */
+    public function dados($cliente_id) {
+        $this->data['titulo_pagina'] = 'Dados do cliente';
+        $this->data['view'] = 'clientes/dados';
+        $this->data['menu'] = 'clientes/menus/dados';
+
+        $this->load->model('clientes_model');
+        $this->data['cliente'] = $this->clientes_model->pegar_cliente($cliente_id);
+
+        $this->load->view('index', $this->data);
+    }
+
+    /**
+     * Função que grava os dados do cliente
+     *
+     * Após a gravação o usuário é redirecionado para a página dos dados do
+     * cliente.
+     */
     public function gravar() {
         $cliente = $this->_pegar_dados_cliente_post();
 
@@ -68,6 +93,11 @@ class Clientes extends CI_Controller {
         redirect(site_url().'clientes');
     }
 
+    /**
+     * Função que pega os dados do clientes enviados via POST
+     *
+     * @return array
+     */
     private function _pegar_dados_cliente_post() {
         $cliente = array(
             'id'            => $this->input->post('id'),
@@ -87,7 +117,8 @@ class Clientes extends CI_Controller {
             'razao_social'  => $this->input->post('razao_social'),
             'cpf'           => $this->input->post('cpf'),
             'cnpj'          => $this->input->post('cnpj'),
-            'documento'     => $this->input->post('documento')
+            'documento'     => $this->input->post('documento'),
+            'observacoes'   => $this->input->post('observacoes')
         );
         return $cliente;
     }

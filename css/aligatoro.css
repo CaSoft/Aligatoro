@@ -1,3 +1,7 @@
+body {
+    font-family: 'Liberation Sans', sans-serif;
+}
+
 #corpo {
     width: 950px;
     margin: 20px auto;
@@ -11,12 +15,16 @@
     margin-bottom: 8px;
 }
 
-#conteudo form label input {
+#conteudo form label input, #conteudo form label textarea {
     display: block;
     font-size: 18px;
     font-family: sans-serif;
     border: 1px solid #777;
     width: 50%;
+}
+
+#conteudo form label textarea {
+    height: 60px;
 }
 
 #conteudo form fieldset {
@@ -44,4 +52,14 @@
     font-weight: bold;
     font-size: 18px;
     background-color: #DDD;
+}
+
+#conteudo table th {
+    font-weight: bold;
+}
+
+#conteudo table th.subtitulo {
+    background-color: #DDD;
+    text-align: center;
+    font-size: 18px;
 }
