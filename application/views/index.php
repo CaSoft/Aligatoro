@@ -41,12 +41,19 @@
     </body>
     <!-- Javascript -->
     <script src="<?php echo site_url(); ?>js/jquery-1.5.min.js" type="text/javascript"></script>
+    <script src="<?php echo site_url(); ?>js/jquery.maskedinput.js" type="text/javascript"></script>
+    <script src="<?php echo site_url(); ?>js/jquery.validate.min.js" type="text/javascript"></script>
+    <script src="<?php echo site_url(); ?>js/jquery.validate.cpfcnpj.js" type="text/javascript"></script>
+    <script src="<?php echo site_url(); ?>js/jquery.validate.braziliandate.js" type="text/javascript"></script>
 
     <script type="text/javascript">
         $(document).ready( function() {
             $('#informativo').delay(4000).hide('slow');
 
             $('tbody tr:odd').css('background-color', '#EEE');
+
+            // Máscara para campos da classe fone
+            $('.fone').mask('(99)9999-9999');
         });
     </script>
 

@@ -28,7 +28,8 @@ class Login extends CI_Controller {
      * Exibe a página de login
      */
     public function index() {
-        if ($this->session->userdata('usuario')) {
+        $usuario = $this->session->userdata('usuario');
+        if (isset($usuario['id'])) {
             redirect(site_url().'painel');
         }
 
