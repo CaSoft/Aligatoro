@@ -5,11 +5,11 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="description" content="Page description" />
         <meta name="keywords" content="Page keywords" />
-        <link rel="shortcut icon" href="<?php echo site_url(); ?>img/icon.gif" />
+        <link rel="shortcut icon" href="<?php echo base_url(); ?>img/icon.gif" />
         
         <!-- CSS -->
-        <link rel="stylesheet" type="text/css" href="<?php echo site_url(); ?>css/yahoo.css" />
-        <link rel="stylesheet" type="text/css" href="<?php echo site_url(); ?>css/aligatoro.css" />
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/yahoo.css" />
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/aligatoro.css" />
         <!-- / CSS -->
     </head>
     <body>
@@ -40,11 +40,11 @@
         </div><!-- corpo -->
     </body>
     <!-- Javascript -->
-    <script src="<?php echo site_url(); ?>js/jquery-1.5.min.js" type="text/javascript"></script>
-    <script src="<?php echo site_url(); ?>js/jquery.maskedinput.js" type="text/javascript"></script>
-    <script src="<?php echo site_url(); ?>js/jquery.validate.min.js" type="text/javascript"></script>
-    <script src="<?php echo site_url(); ?>js/jquery.validate.cpfcnpj.js" type="text/javascript"></script>
-    <script src="<?php echo site_url(); ?>js/jquery.validate.braziliandate.js" type="text/javascript"></script>
+    <script src="<?php echo base_url(); ?>js/jquery-1.5.min.js" type="text/javascript"></script>
+    <script src="<?php echo base_url(); ?>js/jquery.maskedinput.js" type="text/javascript"></script>
+    <script src="<?php echo base_url(); ?>js/jquery.validate.min.js" type="text/javascript"></script>
+    <script src="<?php echo base_url(); ?>js/jquery.validate.cpfcnpj.js" type="text/javascript"></script>
+    <script src="<?php echo base_url(); ?>js/jquery.validate.braziliandate.js" type="text/javascript"></script>
 
     <script type="text/javascript">
         $(document).ready( function() {
@@ -59,7 +59,7 @@
 
     <?php if (isset($javascript)) : ?>
         <?php foreach($javascript as $script) : ?>
-            <script src="<?php echo site_url() ?>js/<?php echo $script; ?>.js" type="text/javascript"></script>
+            <script src="<?php echo base_url() ?>js/<?php echo $script; ?>.js" type="text/javascript"></script>
         <?php endforeach; ?>
     <?php endif; ?>
     <!-- / Javascript -->

@@ -36,10 +36,10 @@
                 <td><?php echo $cliente['email']; ?></td>
                 <td>
                     <a href="<?php echo site_url(); ?>clientes/editar/<?php echo $cliente['id']; ?>" title="Editar dados do cliente">
-                        <img src="<?php echo site_url(); ?>img/icones/editar.png" alt="Editar dados do cliente" />
+                        <img src="<?php echo base_url(); ?>img/icones/editar.png" alt="Editar dados do cliente" />
                     </a>
                     <a href="<?php echo site_url(); ?>clientes/dados/<?php echo $cliente['id']; ?>" title="Ver dados do cliente">
-                        <img src="<?php echo site_url(); ?>img/icones/ver.png" alt="Ver dados do cliente" />
+                        <img src="<?php echo base_url(); ?>img/icones/ver.png" alt="Ver dados do cliente" />
                     </a>
                 </td>
             </tr>

@@ -15,13 +15,16 @@
  *
  * @property CI_Loader          $load
  * @property CI_Input           $input
- * @property Usuarios_model     $usuarios_model
  * @property CI_Session         $session
+ * @property Firephp            $firephp
+ * @property Usuarios_model     $usuarios_model
  */
 class Login extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
+
+        $this->load->library('firephp');
     }
 
     /**
@@ -37,7 +40,7 @@ class Login extends CI_Controller {
         
         $data['falha_login'] = false;
 
-        if ($this->input->post('login')) {
+        if ($this->input->post('login') && $this->input->post('senha')) {
             $this->load->model('usuarios_model');
             if ($this->usuarios_model->autenticar($this->input->post('login'), $this->input->post('senha'))) {
                 // Login funcionou
