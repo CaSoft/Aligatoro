@@ -1,0 +1,16 @@
+body {
+    font-family: sans-serif;
+}
+
+input {
+    font-family: sans-serif;
+    color: #555;
+}
+
+input[type=submit], input[type=button] {
+    border: 1px solid #7BDB2A;
+    background-image: url(../img/template/fundo_botoes.png);
+    background-repeat: repeat-x;
+    background-color: #56D700;
+    color: #FFF;
+}

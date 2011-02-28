@@ -38,7 +38,7 @@
 |
 */
 
-//$route['logout'] = 'login/logout';
+$route['logout'] = 'login/logout';
 
 $route['default_controller'] = "painel";
 $route['404_override'] = '';
