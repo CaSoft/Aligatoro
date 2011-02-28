@@ -33,4 +33,6 @@
             </div>
         <?php endif; ?>
     </body>
+    <script src="<?php echo base_url(); ?>js/jquery-1.5.min.js" type="text/javascript"></script>
+    <script src="<?php echo base_url(); ?>js/login.js" type="text/javascript"></script>
 </html>

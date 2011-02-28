@@ -33,8 +33,6 @@ input {
 }
 
 input[type=text], input[type=password] {
-    border: 1px solid #9CF26C;
-    font-size: 22px;
     width: 190px;
 }
 

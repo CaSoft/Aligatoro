@@ -1,5 +1,5 @@
 body {
-    font-family: sans-serif;
+    font-family: 'Liberation Sans', sans-serif;
 }
 
 input {
@@ -13,6 +13,16 @@ input[type=submit], input[type=button] {
     background-repeat: repeat-x;
     background-color: #56D700;
     color: #FFF;
+}
+
+input[type=text], input[type=password] {
+    border: 1px solid #9CF26C;
+    font-size: 22px;
+    width: 190px;
+}
+
+.limpar {
+    clear: both;
 }
 
 /* Mensagens */

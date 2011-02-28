@@ -9,6 +9,7 @@
         
         <!-- CSS -->
         <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/yahoo.css" />
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/base.css" />
         <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/aligatoro.css" />
         <!-- / CSS -->
     </head>
@@ -25,6 +26,7 @@
                         </li>
                     </ul>
                 </div><!-- menu_topo -->
+                <div class="limpar"></div>
             </div><!-- topo -->
             <div id="menu_lateral">
                <?php $this->load->view($menu); ?>

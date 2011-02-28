@@ -1,10 +1,42 @@
 body {
-    font-family: 'Liberation Sans', sans-serif;
+    background-color: #E8EBE6;
+}
+
+#menu_topo {
+    background-color: #2BA12B;
+    background-image: url(../img/template/fundo_menu_topo.png);
+    background-repeat: repeat-x;
+    width: 750px;
+    float: right;
+}
+
+#menu_lateral {
+    background-color: #2CA02C;
+    background-image: url(../img/template/fundo_menu_lateral.png);
+    background-repeat: repeat-y;
+    width: 180px;
+    float: left;
+    padding: 10px;
+}
+
+#menu_lateral input[type=text] {
+    width: 100%;
+}
+
+#menu_lateral ul a {
+    color: #FFF;
+    text-decoration: none;
+    font-weight: bold;
 }
 
 #corpo {
     width: 950px;
     margin: 20px auto;
+}
+
+#conteudo {
+    width: 740px;
+    float: right;
 }
 
 #conteudo form label {
