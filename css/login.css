@@ -41,3 +41,8 @@ input[type=text], input[type=password] {
 input[type=submit] {
     margin-right: 13px;
 }
+
+.erro {
+    width: 300px;
+    margin: 20px auto 0px auto;
+}

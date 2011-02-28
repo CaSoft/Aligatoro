@@ -14,3 +14,19 @@ input[type=submit], input[type=button] {
     background-color: #56D700;
     color: #FFF;
 }
+
+/* Mensagens */
+.erro {
+    background-color: #FFB2B8;
+    background-image: url(../img/template/erro.png);
+    background-repeat: no-repeat;
+    background-position: 10px 5px;
+    color: #D40000;
+    font-weight: bold;
+    border: 2px solid #CC7D9E;
+}
+
+.erro p {
+    padding: 5px 5px 5px 35px;
+    font-size: 14px;
+}

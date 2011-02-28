@@ -15,11 +15,6 @@
     </head>
     <body>
         <div id="caixa">
-            <?php if ($falha_login) : ?>
-                <div class="erro">
-                    <p>Login falhou, tente novamente.</p>
-                </div>
-            <?php endif; ?>
             <form method="post" action="<?php echo site_url(); ?>login">
                 <label for="login">
                     Login <input type="text" name="login" id="login" value="" maxlength="10" />
@@ -30,5 +25,10 @@
                 <input type="submit" value="Autenticar" />
             </form>
         </div><!-- caixa -->
+        <?php if ($falha_login) : ?>
+            <div class="erro">
+                <p>Login falhou, tente novamente.</p>
+            </div>
+        <?php endif; ?>
     </body>
 </html>
