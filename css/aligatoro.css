@@ -10,6 +10,19 @@ body {
     float: right;
 }
 
+#menu_topo ul li {
+    display: inline-block;
+    margin: 5px 10px;
+    width: 70px;
+}
+
+#menu_topo ul li a {
+    color: #FFF;
+    font-weight: bold;
+    font-size: 14px;
+    text-decoration: none;
+}
+
 #menu_lateral {
     background-color: #2CA02C;
     background-image: url(../img/template/fundo_menu_lateral.png);
@@ -19,14 +32,35 @@ body {
     padding: 10px;
 }
 
-#menu_lateral input[type=text] {
-    width: 100%;
+#menu_lateral h2 {
+    font-weight: bold;
+    font-size: 18px;
+    color: #FFF;
+    margin: 10px 0px 20px 0px;
+    display: block;
+    clear: both;
 }
 
-#menu_lateral ul a {
+#menu_lateral input[type=text], #menu_lateral select {
+    width: 100%;
+    display: block;
+    margin: 0px 0px 6px 0px;
+}
+
+#menu_lateral input[type=button], #menu_lateral input[type=submit] {
+    float: right;
+}
+
+#menu_lateral ul li {
+    display: block;
+    margin-left: 20px;
+}
+
+#menu_lateral ul li a {
     color: #FFF;
     text-decoration: none;
     font-weight: bold;
+    font-size: 14px;
 }
 
 #corpo {

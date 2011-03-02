@@ -2,7 +2,7 @@ body {
     font-family: 'Liberation Sans', sans-serif;
 }
 
-input {
+input, select {
     font-family: sans-serif;
     color: #555;
 }
@@ -15,10 +15,11 @@ input[type=submit], input[type=button] {
     color: #FFF;
 }
 
-input[type=text], input[type=password] {
+input[type=text], input[type=password], select {
     border: 1px solid #9CF26C;
     font-size: 22px;
     width: 190px;
+    background-color: #FFF;
 }
 
 .limpar {
