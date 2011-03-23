@@ -2,12 +2,32 @@ body {
     background-color: #E8EBE6;
 }
 
+a {
+    text-decoration: none;
+}
+
+#opcoes_topo div {
+    float: right;
+    height: 52px;
+    width: 90px;
+    border: 1px solid #C8D2A9;
+    background-color: #C6E9Af;
+    margin: 0px 0px 9px 9px;
+    text-align: center;
+    font-size: 9px;
+}
+
+#opcoes_topo a {
+    color: #2BA12B;
+}
+
 #menu_topo {
     background-color: #2BA12B;
     background-image: url(../img/template/fundo_menu_topo.png);
     background-repeat: repeat-x;
     width: 750px;
     float: right;
+    text-align: right;
 }
 
 #menu_topo ul li {

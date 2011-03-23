@@ -16,13 +16,25 @@
     <body>
         <div id="corpo">
             <div id="topo">
+                <div id="opcoes_topo">
+                    <div>
+                        <a href="<?php echo site_url(); ?>logout" title="Sair do sistema">
+                            <img src="<?php echo base_url(); ?>img/icones/sair.png" alt="Sair" /><br />
+                            Sair
+                        </a>
+                    </div>
+                    <div>
+                        <a href="<?php echo site_url(); ?>config" title="Configurações do sistema">
+                            <img src="<?php echo base_url(); ?>img/icones/config.png" alt="Configurações" /><br />
+                            Configurações
+                        </a>
+                    </div>
+                </div>
+                <div class="limpar"></div>
                 <div id="menu_topo">
                     <ul>
                         <li>
                             <a href="<?php echo site_url(); ?>clientes" title="Controle de clientes">Clientes</a>
-                        </li>
-                        <li>
-                            <a href="<?php echo site_url(); ?>logout" title="Sair do sistema">Sair</a>
                         </li>
                     </ul>
                 </div><!-- menu_topo -->
