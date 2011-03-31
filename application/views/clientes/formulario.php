@@ -1,11 +1,13 @@
 <form id="form_cliente" method="post" action="<?php echo site_url(); ?>clientes/gravar">
     <div class="div_direita">
-        <input type="submit" value="Enviar" />
+        <p>Dados adicionais: </p>
+        <input type="button" id="btn_exibir_endereco" value="Exibir endereço" />
+        <input type="button" id="btn_exibir_detalhes" value="Exibir detalhes" />
     </div>
     <input type="hidden" name="id" value="<?php echo $cliente['id']; ?>" />
     <fieldset>
         <legend>Dados básicos</legend>
-        <label for="nome">Nome:
+        <label for="nome">* Nome:
             <input type="text" name="nome" id="nome" value="<?php echo $cliente['nome']; ?>" />
         </label>
         <label for="telefone1">Telefone:
@@ -18,10 +20,6 @@
             <textarea name="observacoes" id="observacoes" rows="" cols=""><?php echo $cliente['observacoes']; ?></textarea>
         </label>
     </fieldset>
-    <div class="div_direita">
-        <input type="button" id="btn_exibir_endereco" value="Exibir endereço" />
-        <input type="button" id="btn_exibir_detalhes" value="Exibir detalhes" />
-    </div>
     <fieldset id="campos_endereco" style="display: none;">
         <legend>Endereço</legend>
         <label for="contato">Contato:

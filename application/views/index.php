@@ -44,6 +44,10 @@
                <?php $this->load->view($menu); ?>
             </div><!-- menu_lateral -->
             <div id="conteudo">
+                <div id="info_usuario">
+                    <p>Olá, <?php echo $usuario['nome']; ?> // <a href="" title="Alterar meus dados">Meus Dados</a></p>
+                    <p><?php echo $data_topo; ?></p>
+                </div>
                 <?php if ($this->session->flashdata('informativo')) : ?>
                     <div id="informativo">
                         <?php echo $this->session->flashdata('informativo'); ?>
