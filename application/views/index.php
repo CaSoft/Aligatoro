@@ -46,7 +46,11 @@
                 <div class="limpar"></div>
             </div><!-- topo -->
             <div id="menu_lateral">
-               <?php $this->load->view($menu); ?>
+                <div class="tamanho_vertical"></div>
+                <div class="itens">
+                    <?php $this->load->view($menu); ?>
+                </div>
+                <div class="limpar"></div>
             </div><!-- menu_lateral -->
             <div id="conteudo">
                 <div id="info_usuario">
@@ -60,6 +64,11 @@
                 <?php endif; ?>
                 <?php $this->load->view($view); ?>
             </div><!-- conteudo -->
+            <div class="limpar"></div>
+            <div id="rodape">
+                <p>Desenvolvido por <a href="http://casoft.info/" title="Site da CaSoft">CaSoft Tecnologia</a> e <a href="http://jacaretecnologia.com.br/" title="Site da Jacaré">Jacaré Tecnologia</a></p>
+                <p>Licenciado pela GNU GPLv3</p>
+            </div>
         </div><!-- corpo -->
     </body>
     <!-- Javascript -->

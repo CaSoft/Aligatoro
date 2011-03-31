@@ -60,6 +60,15 @@ a {
     padding: 10px;
 }
 
+#menu_lateral div.tamanho_vertical {
+    float: right;
+    height: 400px;
+}
+
+#menu_lateral div.itens {
+    float: left;
+}
+
 #menu_lateral h2 {
     font-weight: bold;
     font-size: 16px;
@@ -173,4 +182,9 @@ a {
     background-color: #DDD;
     text-align: center;
     font-size: 18px;
+}
+
+#rodape p {
+    text-align: center;
+    font-size: 10px;
 }
