@@ -91,7 +91,16 @@ a {
 
 #menu_lateral ul li {
     display: block;
-    margin-left: 20px;
+    width: 150px;
+    padding: 3px;
+    margin-left: 10px;
+    background-color: #71c837;
+    border: 1px solid #49b61d;
+}
+
+#menu_lateral ul li:hover {
+    background-color: #71c837;
+    border: 1px solid #49b61d;
 }
 
 #menu_lateral ul li a {
@@ -109,7 +118,7 @@ a {
 #info_usuario {
     text-align: right;
     font-size: 10px;
-    margin: 6px 0px 0px 0px;
+    margin: 6px 0px 6px 0px;
 }
 
 #conteudo {
@@ -148,18 +157,21 @@ a {
 }
 
 #conteudo form fieldset {
-    border: 1px solid #777;
     padding: 10px;
     margin: 10px 0px;
 }
 
 #conteudo form fieldset legend {
-    border-right: 4px double #777;
-    border-left: 4px double #777;
+    border-bottom: 4px double #777;
+    width: 100%;
 }
 
 .div_direita {
     text-align: right;
+}
+
+.div_direita p {
+    display: inline;
 }
 
 #conteudo table {

@@ -1,3 +1,4 @@
+<h2><?php echo $titulo_pagina; ?></h2>
 <form id="form_cliente" method="post" action="<?php echo site_url(); ?>clientes/gravar">
     <div class="div_direita">
         <p>Dados adicionais: </p>

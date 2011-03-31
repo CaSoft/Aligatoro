@@ -1,3 +1,4 @@
+<h2><?php echo $titulo_pagina; ?></h2>
 <table>
     <tr>
         <th colspan="2" class="subtitulo">Dados Básicos</th>
