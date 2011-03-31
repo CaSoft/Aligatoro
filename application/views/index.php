@@ -12,6 +12,11 @@
         <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/base.css" />
         <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/aligatoro.css" />
         <!-- / CSS -->
+
+        <script type="text/javascript">
+            var SITE_URL = "<?php echo site_url(); ?>";
+            var BASE_URL = "<?php echo base_url(); ?>";
+        </script>
     </head>
     <body>
         <div id="corpo">
@@ -49,7 +54,7 @@
                     <p><?php echo $data_topo; ?></p>
                 </div>
                 <?php if ($this->session->flashdata('informativo')) : ?>
-                    <div id="informativo">
+                    <div id="informativo" class="<?php echo $this->session->flashdata('informativo_classe'); ?>">
                         <?php echo $this->session->flashdata('informativo'); ?>
                     </div>
                 <?php endif; ?>

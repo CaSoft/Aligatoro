@@ -47,7 +47,13 @@ class Clientes_model extends CI_Model {
      * @return array
      */
     public function pesquisar_clientes($campo, $valor) {
-        $this->db->like($campo, $valor);
+        if ($campo == 'telefone') {
+            $this->db->like('telefone1', $valor);
+            $this->db->or_like('telefone2', $valor);
+        }
+        else {
+            $this->db->like($campo, $valor);
+        }
         $query = $this->db->get('clientes');
 
         return $query->result_array();

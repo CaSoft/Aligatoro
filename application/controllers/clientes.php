@@ -105,12 +105,14 @@ class Clientes extends MY_Controller {
 
         if ($this->input->post('id') != '0') {
             $this->session->set_flashdata(array(
-                'informativo' => 'Cliente atualizado com sucesso!'
+                'informativo' => 'Cliente atualizado com sucesso!',
+                'informativo_classe' => 'sucesso'
             ));
         }
         else {
             $this->session->set_flashdata(array(
-                'informativo' => 'Cliente adicionado com sucesso!'
+                'informativo' => 'Cliente adicionado com sucesso!',
+                'informativo_classe' => 'sucesso'
             ));
         }
 
