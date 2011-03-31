@@ -6,13 +6,25 @@ a {
     text-decoration: none;
 }
 
+.lista_opcoes {
+    background-color: #EEE;
+}
+
+.alinha_centro {
+    text-align: center;
+}
+
+.alinha_direita {
+    text-align: right;
+}
+
 #opcoes_topo div {
     float: right;
     height: 52px;
     width: 90px;
     border: 1px solid #C8D2A9;
     background-color: #C6E9Af;
-    margin: 0px 0px 9px 9px;
+    margin: 0px 10px 10px 0px;
     text-align: center;
     font-size: 9px;
 }
@@ -112,7 +124,9 @@ a {
 
 #corpo {
     width: 950px;
-    margin: 20px auto;
+    margin: 0px auto;
+    padding: 10px 0px;
+    background-color: #E6FFE6;
 }
 
 #info_usuario {
@@ -194,6 +208,16 @@ a {
     background-color: #DDD;
     text-align: center;
     font-size: 18px;
+}
+
+/* Configurações */
+#lista_configuracoes {
+    width: 500px;
+    margin: 10px auto;
+}
+
+#lista_configuracoes span {
+    float: right;
 }
 
 #rodape p {

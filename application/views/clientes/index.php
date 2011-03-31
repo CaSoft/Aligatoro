@@ -15,7 +15,7 @@
             <th>Nome</th>
             <th>Telefone</th>
             <th>Email</th>
-            <th>Ações</th>
+            <th class="alinha_direita">Ações</th>
         </tr>
     </thead>
     <tbody>
@@ -24,7 +24,7 @@
                 <td><?php echo $cliente['nome']; ?></td>
                 <td><?php echo $cliente['telefone1']; ?></td>
                 <td><?php echo $cliente['email']; ?></td>
-                <td>
+                <td class="alinha_direita">
                     <a href="<?php echo site_url(); ?>clientes/editar/<?php echo $cliente['id']; ?>" title="Editar dados do cliente">
                         <img src="<?php echo base_url(); ?>img/icones/editar.png" alt="Editar dados do cliente" />
                     </a>

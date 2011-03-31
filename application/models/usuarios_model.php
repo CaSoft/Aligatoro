@@ -30,6 +30,7 @@ class Usuarios_model extends CI_Model {
     public function autenticar($login, $senha) {
         $this->db->where('login', $login);
         $this->db->where('senha', md5($senha));
+        $this->db->where('ativo', '1');
 
         if ($this->db->count_all_results('usuarios') == 1) {
             return true;
@@ -53,6 +54,47 @@ class Usuarios_model extends CI_Model {
         $query = $this->db->get();
 
         return $query->row_array();
+    }
+
+    /**
+     * Função para pesquisar usuários
+     *
+     * @param string $campo
+     * @param string $valor
+     * @return array
+     */
+    public function pesquisar_usuarios($campo, $valor) {
+        $this->db->like($campo, $valor);
+        $query = $this->db->get('usuarios');
+
+        return $query->result_array();
+    }
+
+    /**
+     * Esta função pega os dados de um usuario
+     *
+     * @param integer $id
+     * @return array
+     */
+    public function pegar_usuario($id) {
+        $this->db->where('id', $id);
+        $query = $this->db->get('usuarios');
+
+        return $query->row_array();
+    }
+
+    /**
+     * Esta função retorna os últimos usuários cadastrados
+     *
+     * @param integer $numero Número de cadastros a retornar
+     * @return array
+     */
+    public function pegar_ultimos_cadastrados($numero) {
+        $this->db->limit($numero);
+        $this->db->order_by('id', 'desc');
+        $query = $this->db->get('usuarios');
+
+        return $query->result_array();
     }
 }
 
