@@ -104,6 +104,24 @@ class Usuarios_model extends CI_Model {
     }
 
     /**
+     * Função que verifica se um login já existe no sistema
+     *
+     * @param string $login
+     * @return boolean
+     */
+    public function verificar_login($login) {
+        $this->db->where('login', $login);
+        $total = $this->db->count_all_results('usuarios');
+
+        if ($total > 0) {
+            return TRUE;
+        }
+        else {
+            return FALSE;
+        }
+    }
+
+    /**
      * Esta função retorna os últimos usuários cadastrados
      *
      * @param integer $numero Número de cadastros a retornar

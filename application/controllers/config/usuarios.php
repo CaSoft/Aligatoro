@@ -68,6 +68,7 @@ class Usuarios extends MY_Controller {
         $this->data['menu'] = 'config/usuarios/menus/formulario';
 
         $this->data['javascript'] = array(
+            'models/usuarios_model',    // As models devem vir antes!
             'config/usuarios/formulario'
         );
 
@@ -83,6 +84,7 @@ class Usuarios extends MY_Controller {
         $this->data['menu'] = 'config/usuarios/menus/formulario';
 
         $this->data['javascript'] = array(
+            'models/usuarios_model',    // As models devem vir antes!
             'config/usuarios/formulario'
         );
 

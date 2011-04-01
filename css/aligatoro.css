@@ -210,6 +210,10 @@ a {
     font-size: 18px;
 }
 
+#conteudo label.error {
+    color: #FF2626;
+}
+
 /* Configurações */
 #lista_configuracoes {
     width: 500px;
