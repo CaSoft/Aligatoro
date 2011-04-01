@@ -16,6 +16,7 @@
  * @property CI_Loader              $load
  * @property CI_Input               $input
  * @property CI_Session             $session
+ * @property Usuarios_model         $usuarios_model
  */
 class Usuarios extends MY_Controller {
     public function __construct() {
@@ -45,6 +46,37 @@ class Usuarios extends MY_Controller {
         $this->load->view('index', $this->data);
     }
 
+    /**
+     * Esta função exibe os dados do usuário
+     *
+     * @param integer $usuario_id
+     */
+    public function dados($usuario_id) {
+        $this->data['titulo_pagina'] = 'Dados do usuário';
+        $this->data['view'] = 'config/usuarios/dados';
+        $this->data['menu'] = 'config/usuarios/menus/dados';
+
+        $this->load->model('usuarios_model');
+        $this->data['usuario'] = $this->usuarios_model->pegar_usuario($usuario_id);
+
+        $this->load->view('index', $this->data);
+    }
+
+    public function editar($usuario_id) {
+        $this->data['titulo_pagina'] = 'Edição de cadastro de usuário';
+        $this->data['view'] = 'config/usuarios/formulario';
+        $this->data['menu'] = 'config/usuarios/menus/formulario';
+
+        $this->data['javascript'] = array(
+            'config/usuarios/formulario'
+        );
+
+        $this->load->model('usuarios_model');
+        $this->data['usuario'] = $this->usuarios_model->pegar_usuario($usuario_id);
+
+        $this->load->view('index', $this->data);
+    }
+
     public function novo() {
         $this->data['titulo_pagina'] = 'Cadastro de usuário';
         $this->data['view'] = 'config/usuarios/formulario';
@@ -57,6 +89,59 @@ class Usuarios extends MY_Controller {
         $this->data['usuario'] = $this->_usuario_vazio();
 
         $this->load->view('index', $this->data);
+    }
+    
+    /**
+     * Função que grava os dados do usuário
+     *
+     * Após a gravação o usuário é redirecionado para a página dos dados do
+     * usuário.
+     */
+    public function gravar() {
+        $usuario = $this->_pegar_dados_usuario_post();
+
+        $this->load->model('usuarios_model');
+
+        $usuario['id'] = $this->usuarios_model->gravar($usuario);
+
+        if ($this->input->post('id') != '0') {
+            $this->session->set_flashdata(array(
+                'informativo' => 'Usuário atualizado com sucesso!',
+                'informativo_classe' => 'sucesso'
+            ));
+        }
+        else {
+            $this->session->set_flashdata(array(
+                'informativo' => 'Usuário adicionado com sucesso!',
+                'informativo_classe' => 'sucesso'
+            ));
+        }
+
+        redirect(site_url().'config/usuarios/dados/'.$usuario['id']);
+    }
+
+    /**
+     * Função que pega os dados do usuário enviados via POST
+     *
+     * @return array
+     */
+    private function _pegar_dados_usuario_post() {
+        $usuario = array(
+            'id'            => $this->input->post('id'),
+            'login'          => $this->input->post('login'),
+            'nome'     => $this->input->post('nome'),
+            'email'         => $this->input->post('email')
+        );
+
+        if ($this->input->post('ativo')) {
+            $usuario['ativo'] = '1';
+        }
+
+        if ($this->input->post('senha')) {
+            $usuario['senha'] = md5($this->input->post('senha'));
+        }
+
+        return $usuario;
     }
 
     /**

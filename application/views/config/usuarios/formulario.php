@@ -1,10 +1,5 @@
 <h2><?php echo $titulo_pagina; ?></h2>
-<form id="form_usuario" method="post" action="<?php echo site_url(); ?>usuarios/gravar">
-    <div class="div_direita">
-        <p>Dados adicionais: </p>
-        <input type="button" id="btn_exibir_endereco" value="Exibir endereço" />
-        <input type="button" id="btn_exibir_detalhes" value="Exibir detalhes" />
-    </div>
+<form id="form_usuario" method="post" action="<?php echo site_url(); ?>config/usuarios/gravar">
     <input type="hidden" name="id" value="<?php echo $usuario['id']; ?>" />
     <fieldset>
         <legend>Dados do usuário</legend>
@@ -21,7 +16,7 @@
             <input type="text" name="email" id="email" value="<?php echo $usuario['email']; ?>" />
         </label>
         <label for="senha">* Senha:
-            <input type="text" name="senha" id="senha" value="" />
+            <input type="password" name="senha" id="senha" value="" />
         </label>
     </fieldset>
     <div class="div_direita">

@@ -57,6 +57,26 @@ class Usuarios_model extends CI_Model {
     }
 
     /**
+     * Função para gravar/atualizar os dados de um usuário.
+     *
+     * @param array $usuario Dados do usuário a ser cadastrado no banco
+     * @return integer
+     */
+    public function gravar($usuario) {
+        if ($usuario['id'] == '0') {
+            $usuario['datahora'] = date('Y-m-d h:j:s');
+            $this->db->insert('usuarios', $usuario);
+            $usuario['id'] = $this->db->insert_id();
+        }
+        else {
+            $this->db->where('id', $usuario['id']);
+            $this->db->update('usuarios', $usuario);
+        }
+
+        return $usuario['id'];
+    }
+
+    /**
      * Função para pesquisar usuários
      *
      * @param string $campo
