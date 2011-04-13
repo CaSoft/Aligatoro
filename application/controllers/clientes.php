@@ -51,7 +51,8 @@ class Clientes extends MY_Controller {
         $this->data['menu'] = 'clientes/menus/formulario';
 
         $this->data['javascript'] = array(
-            'clientes/formulario'
+            'clientes/formulario',
+            'clientes/dados'
         );
 
         $this->data['cliente'] = $this->_cliente_vazio();
@@ -69,6 +70,10 @@ class Clientes extends MY_Controller {
         $this->data['view'] = 'clientes/dados';
         $this->data['menu'] = 'clientes/menus/dados';
 
+        $this->data['javascript'] = array(
+            'clientes/dados'
+        );
+
         $this->load->model('clientes_model');
         $this->data['cliente'] = $this->clientes_model->pegar_cliente($cliente_id);
 
@@ -81,7 +86,8 @@ class Clientes extends MY_Controller {
         $this->data['menu'] = 'clientes/menus/formulario';
 
         $this->data['javascript'] = array(
-            'clientes/formulario'
+            'clientes/formulario',
+            'clientes/dados'
         );
 
         $this->load->model('clientes_model');

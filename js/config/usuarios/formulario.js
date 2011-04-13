@@ -1,3 +1,8 @@
+/**
+ * Script para o formulário de cadastro de usuários
+ *
+ * @require jQuery > 1.5
+ */
 $(document).ready( function() {
     $('#form_usuario').validate({
         submitHandler : function(form) {
