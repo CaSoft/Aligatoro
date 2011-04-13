@@ -51,6 +51,7 @@ class Clientes extends MY_Controller {
         $this->data['menu'] = 'clientes/menus/formulario';
 
         $this->data['javascript'] = array(
+            'tinymce/jscripts/tiny_mce/jquery.tinymce',
             'clientes/formulario',
             'clientes/dados'
         );
@@ -86,6 +87,7 @@ class Clientes extends MY_Controller {
         $this->data['menu'] = 'clientes/menus/formulario';
 
         $this->data['javascript'] = array(
+            'tinymce/jscripts/tiny_mce/jquery.tinymce',
             'clientes/formulario',
             'clientes/dados'
         );

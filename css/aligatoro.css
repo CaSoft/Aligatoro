@@ -228,3 +228,20 @@ a {
     text-align: center;
     font-size: 10px;
 }
+
+/* Textos editados com o TinyMCE */
+#conteudo table strong {
+    font-weight: bold;
+}
+
+#conteudo table em {
+    font-style: italic;
+}
+
+#conteudo table ul {
+    list-style: circle inside;
+}
+
+#conteudo table ol {
+    list-style: decimal inside;
+}
