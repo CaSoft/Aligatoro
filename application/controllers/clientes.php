@@ -81,6 +81,21 @@ class Clientes extends MY_Controller {
         $this->load->view('index', $this->data);
     }
 
+    /**
+     * Esta função exibe os dados do cliente para impressao
+     *
+     * @param integer $cliente_id
+     */
+    public function impressao($cliente_id) {
+        $this->data['titulo_pagina'] = 'Dados do cliente';
+        $this->data['view'] = 'clientes/impressao';
+
+        $this->load->model('clientes_model');
+        $this->data['cliente'] = $this->clientes_model->pegar_cliente($cliente_id);
+
+        $this->load->view('impressao', $this->data);
+    }
+
     public function editar($cliente_id) {
         $this->data['titulo_pagina'] = 'Edição de cadastro de cliente';
         $this->data['view'] = 'clientes/formulario';

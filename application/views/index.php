@@ -77,6 +77,7 @@
     <script src="<?php echo base_url(); ?>js/jquery.validate.min.js" type="text/javascript"></script>
     <script src="<?php echo base_url(); ?>js/jquery.validate.cpfcnpj.js" type="text/javascript"></script>
     <script src="<?php echo base_url(); ?>js/jquery.validate.braziliandate.js" type="text/javascript"></script>
+    <script src="<?php echo base_url(); ?>js/jquery.popupWindow.js" type="text/javascript"></script>
 
     <script type="text/javascript">
         $(document).ready( function() {
@@ -86,6 +87,11 @@
 
             // Máscara para campos da classe fone
             $('.fone').mask('(99)9999-9999');
+
+            $('.impressao_popup').popupWindow({
+                height : 500,
+                width : 800
+            });
         });
     </script>
 
