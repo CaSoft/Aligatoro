@@ -6,7 +6,7 @@
         </li>
     <?php else : ?>
         <li>
-            <a href="<?php echo site_url(); ?>clientes" title="Cancelar cadastro">Cancelar</a>
+            <a href="<?php echo site_url(); ?>clientes" title="Cancelar cadastro">Voltar</a>
         </li>
     <?php endif; ?>
 </ul>

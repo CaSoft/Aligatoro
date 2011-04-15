@@ -70,6 +70,7 @@
         </label>
     </fieldset>
     <div class="div_direita">
+        <input type="button" value="Cancelar" onclick="window.location = '<?php echo site_url(); echo ($cliente['id'] != '0') ? 'clientes/dados/'.$cliente['id'] : 'clientes'; ?>'" />
         <input type="submit" value="Enviar" />
     </div>
 </form>

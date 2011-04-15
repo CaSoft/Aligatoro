@@ -20,6 +20,7 @@
         </label>
     </fieldset>
     <div class="div_direita">
+        <input type="button" value="Cancelar" onclick="window.location = '<?php echo site_url(); echo ($usuario['id'] != '0') ? 'config/usuarios/dados/'.$usuario['id'] : 'config/usuarios'; ?>'" />
         <input type="submit" value="Enviar" />
     </div>
 </form>

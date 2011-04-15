@@ -21,9 +21,9 @@ a {
 #opcoes_topo div {
     float: right;
     height: 52px;
-    width: 90px;
+    /*width: 90px;
     border: 1px solid #C8D2A9;
-    background-color: #C6E9Af;
+    background-color: #C6E9Af;*/
     margin: 0px 10px 10px 0px;
     text-align: center;
     font-size: 9px;
@@ -106,8 +106,10 @@ a {
     width: 150px;
     padding: 3px;
     margin-left: 10px;
-    background-color: #71c837;
-    border: 1px solid #49b61d;
+    border: 1px solid #AAA;
+    background-color: #b7b7b7;
+    background-image: url(../img/template/fundo_botoes_menu.png);
+    background-repeat: repeat-x;
 }
 
 #menu_lateral ul li:hover {
@@ -116,10 +118,10 @@ a {
 }
 
 #menu_lateral ul li a {
-    color: #FFF;
+    color: #666;
     text-decoration: none;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 #corpo {

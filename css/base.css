@@ -10,11 +10,13 @@ input, select {
 }
 
 input[type=submit], input[type=button] {
-    border: 1px solid #7BDB2A;
-    background-image: url(../img/template/fundo_botoes.png);
+    border: 1px solid #AAA;
+    background-color: #b7b7b7;
+    background-image: url(../img/template/fundo_botoes_menu.png);
     background-repeat: repeat-x;
-    background-color: #56D700;
-    color: #FFF;
+    color: #666;
+    font-size: 16px;
+    font-weight: bold;
 }
 
 input[type=text], input[type=password], select {
