@@ -34,3 +34,34 @@ Usuarios_model.prototype.loginExiste = function(login) {
         return false;
     }
 };
+
+/**
+ * Verificação da senha atual de um usuário
+ *
+ * Só funciona com o usuário já autenticado!
+ *
+ * @param id integer
+ * @param senha string
+ * @return boolean
+ */
+Usuarios_model.prototype.confereSenha = function(id, senha) {
+    var dados = {
+        'id' : id,
+        'senha' : senha
+    }
+
+    var senha_valida = $.ajax({
+        url : SITE_URL + 'ajax/usuarios/confere_senha',
+        type : 'POST',
+        data : $.param(dados),
+        dataType : 'text',
+        async : false
+    }).responseText;
+
+    if (senha_valida == '0') {
+        return true;
+    }
+    else {
+        return false;
+    }
+}

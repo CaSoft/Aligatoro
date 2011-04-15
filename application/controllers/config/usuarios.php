@@ -129,10 +129,10 @@ class Usuarios extends MY_Controller {
      */
     private function _pegar_dados_usuario_post() {
         $usuario = array(
-            'id'            => $this->input->post('id'),
-            'login'          => $this->input->post('login'),
-            'nome'     => $this->input->post('nome'),
-            'email'         => $this->input->post('email')
+            'id'        => $this->input->post('id'),
+            'login'     => $this->input->post('login'),
+            'nome'      => $this->input->post('nome'),
+            'email'     => $this->input->post('email')
         );
 
         if ($this->input->post('ativo')) {

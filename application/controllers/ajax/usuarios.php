@@ -36,6 +36,25 @@ class Usuarios extends MY_Controller {
                 echo '0'; // Login não existe no sistema;
             }
         }
+        else {
+            echo '2'; // Sem informações
+        }
+    }
+
+    public function confere_senha() {
+        if ($this->input->post('id') && $this->input->post('senha')) {
+            $this->load->model('usuarios_model');
+
+            if ($this->usuarios_model->verificar_senha($this->input->post('id'), $this->input->post('senha'))) {
+                echo '0'; // Ok, senha conferida
+            }
+            else {
+                echo '1'; // Senha errada!
+            }
+        }
+        else {
+            echo '2'; // Sem dados suficientes
+        }
     }
 }
 

@@ -121,6 +121,20 @@ class Usuarios_model extends CI_Model {
         }
     }
 
+    public function verificar_senha($id, $senha) {
+        $this->db->where('id', $id);
+        $this->db->where('senha', md5($senha));
+
+        $total = $this->db->count_all_results('usuarios');
+
+        if ($total > 0) {
+            return TRUE; // A senha está correta
+        }
+        else {
+            return FALSE; // Senha incorreta, perdeu, playboy!
+        }
+    }
+
     /**
      * Esta função retorna os últimos usuários cadastrados
      *

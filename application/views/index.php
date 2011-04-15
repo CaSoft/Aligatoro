@@ -54,7 +54,7 @@
             </div><!-- menu_lateral -->
             <div id="conteudo">
                 <div id="info_usuario">
-                    <p>Olá, <?php echo $usuario['nome']; ?> // <a href="" title="Alterar meus dados">Meus Dados</a></p>
+                    <p>Olá, <?php echo $usuario['nome']; ?> // <a href="<?php echo site_url(); ?>painel/meus_dados" title="Alterar meus dados">Meus Dados</a></p>
                     <p><?php echo $data_topo; ?></p>
                 </div>
                 <?php if ($this->session->flashdata('informativo')) : ?>
