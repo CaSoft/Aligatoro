@@ -5,7 +5,7 @@
  * Model dos usuários do sistema
  *
  * @author      Evaldo Junior <junior@casoft.info>
- * @package     Aligatoro
+ * @package     Estrilo
  * @subpackage  models
  * @property    CI_DB_active_record     $db
  */

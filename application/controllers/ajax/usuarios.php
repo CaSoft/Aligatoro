@@ -6,7 +6,7 @@
  *
  * @author Evaldo Junior <junior@casoft.info>
  * @version 0.1
- * @package Aligatoro
+ * @package Estrilo
  * @subpackage controllers
  */
 

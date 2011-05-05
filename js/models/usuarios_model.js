@@ -6,7 +6,7 @@
 
 Usuarios_model = function() {
     this.nome = "Usuamos_model";
-}
+};
 
 /**
  * Esta função verifica se um login já existe no sistema
@@ -64,4 +64,4 @@ Usuarios_model.prototype.confereSenha = function(id, senha) {
     else {
         return false;
     }
-}
+};

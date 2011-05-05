@@ -6,7 +6,7 @@
  *
  * @author Evaldo Junior <junior@casoft.info>
  * @version 0.1
- * @package Aligatoro
+ * @package Estrilo
  * @subpackage controllers
  */
 
@@ -27,6 +27,10 @@ class Clientes extends MY_Controller {
         $this->data['titulo_pagina'] = 'Controle de clientes';
         $this->data['view'] = 'clientes/index';
         $this->data['menu'] = 'clientes/menus/index';
+        
+        $this->data['javascript'] = array(
+            'clientes/index'
+        );
 
         $this->load->model('clientes_model');
 

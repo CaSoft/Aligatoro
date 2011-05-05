@@ -5,7 +5,7 @@
  * Model Clientes
  *
  * @author      Evaldo Junior <junior@casoft.info>
- * @package     aligatoro
+ * @package     Estrilo
  * @subpackage  models
  * @property    CI_DB_active_record     $db
  */

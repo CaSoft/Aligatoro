@@ -6,7 +6,7 @@
         <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/impressao.css" media="all" />
     </head>
     <body onload="window.print()">
-        <h1>Sistema Aligatoro :: Impressão</h1>
+        <h1><?php echo SYSTEM_NAME; ?> :: Impressão</h1>
         <?php $this->load->view($view); ?>
     </body>
 </html>

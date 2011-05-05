@@ -66,6 +66,7 @@
             </div><!-- conteudo -->
             <div class="limpar"></div>
             <div id="rodape">
+                <p><?php echo SYSTEM_NAME; ?></p>
                 <p>Desenvolvido por <a href="http://casoft.info/" title="Site da CaSoft">CaSoft Tecnologia</a> e <a href="http://jacaretecnologia.com.br/" title="Site da Jacaré">Jacaré Tecnologia</a></p>
                 <p>Licenciado pela GNU GPLv3</p>
             </div>
@@ -87,11 +88,6 @@
 
             // Máscara para campos da classe fone
             $('.fone').mask('(99)9999-9999');
-
-            $('.impressao_popup').popupWindow({
-                height : 500,
-                width : 800
-            });
         });
     </script>
 
