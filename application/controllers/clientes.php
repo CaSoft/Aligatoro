@@ -145,6 +145,31 @@ class Clientes extends MY_Controller {
 
         redirect(site_url().'clientes/dados/'.$cliente['id']);
     }
+    
+    /**
+     * Função para remover um cliente
+     *
+     * @param integer $cliente_id 
+     */
+    public function remover($cliente_id) {
+        if (is_an_integer($cliente_id)) {
+            $this->load->model('clientes_model');
+            
+            if ($this->clientes_model->remover($cliente_id)) {
+                $this->session->set_flashdata(array(
+                    'informativo' => 'Cliente removido com sucesso!',
+                    'informativo_classe' => 'sucesso'
+                ));
+            }
+            else {
+                $this->session->set_flashdata(array(
+                    'informativo' => 'Erro ao remover cliente!',
+                    'informativo_classe' => 'erro'
+                ));
+            }
+        }
+        redirect(site_url().'clientes');
+    }
 
     /**
      * Função que pega os dados do clientes enviados via POST

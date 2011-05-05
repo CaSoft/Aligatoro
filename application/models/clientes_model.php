@@ -38,6 +38,22 @@ class Clientes_model extends CI_Model {
 
         return $cliente['id'];
     }
+    
+    /**
+     * Função que remove um cliente do banco de dados.
+     *
+     * @param integer $cliente_id
+     * @return boolean
+     */
+    public function remover($cliente_id) {
+        if (is_an_integer($cliente_id)) {
+            $this->db->where('id', $cliente_id);
+            $this->db->delete('clientes');
+            
+            return TRUE;
+        }
+        return FALSE;
+    }
 
     /**
      * Função para pesquisaer clientes

@@ -25,6 +25,8 @@
                 <td><?php echo $cliente['telefone1']; ?></td>
                 <td><?php echo $cliente['email']; ?></td>
                 <td class="alinha_direita">
+                    <img src="<?php echo base_url(); ?>img/icones/remocao.png" class="clicavel" onclick="remover_cliente(<?php echo $cliente['id']; ?>);" />
+                    &nbsp;&nbsp;&nbsp;
                     <a href="<?php echo site_url(); ?>clientes/impressao/<?php echo $cliente['id']; ?>" title="Imprimir os dados do cliente" class="impressao_popup">
                         <img src="<?php echo base_url(); ?>img/icones/impressao.png" alt="Imprimir os dados do cliente" />
                     </a>

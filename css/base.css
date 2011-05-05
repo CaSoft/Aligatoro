@@ -30,6 +30,10 @@ input[type=text], input[type=password], select {
     clear: both;
 }
 
+img.clicavel {
+    cursor: pointer;
+}
+
 /* Mensagens */
 .erro {
     background-color: #FFB2B8;
