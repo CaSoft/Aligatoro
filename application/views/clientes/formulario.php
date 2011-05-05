@@ -65,7 +65,7 @@
         <label for="cnpj">CNPJ:
             <input type="text" name="cnpj" id="cnpj" maxlength="18" value="<?php echo $cliente['cnpj']; ?>" />
         </label>
-        <label for="documento">Documento:
+        <label for="documento">Outro documento:
             <input type="text" name="documento" id="documento" maxlength="20" value="<?php echo $cliente['documento']; ?>" />
         </label>
     </fieldset>
