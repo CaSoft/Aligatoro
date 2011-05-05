@@ -64,7 +64,7 @@ $(document).ready( function() {
         theme_advanced_statusbar_location : "bottom",
         theme_advanced_resizing : true,
 
-        width : "600",
+        width : "720",
 
         height : "200",
 
