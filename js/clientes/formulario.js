@@ -44,6 +44,8 @@ $(document).ready( function() {
     // Adicionando as máscaras
     $('#cpf').mask('999.999.999-99');
     $('#cnpj').mask('99.999.999/9999-99');
+    
+    $('#cep').mask('99999-999');
 
     // Adicionando o editor WYSIWYG no campo de observações
     $('#observacoes').tinymce({
