@@ -75,6 +75,22 @@ class Usuarios_model extends CI_Model {
 
         return $usuario['id'];
     }
+    
+    /**
+     * Função para remover um usuário cadastrado no sistema.
+     *
+     * @param integer $usuario_id
+     * @return boolean 
+     */
+    public function remover($usuario_id) {
+        if (is_an_integer($usuario_id)) {
+            $this->db->where('id', $usuario_id);
+            $this->db->delete('usuarios');
+            
+            return TRUE;
+        }
+        return FALSE;
+    }
 
     /**
      * Função para pesquisar usuários

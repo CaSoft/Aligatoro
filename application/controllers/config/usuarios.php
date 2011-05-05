@@ -29,7 +29,7 @@ class Usuarios extends MY_Controller {
         $this->data['menu'] = 'config/usuarios/menus/index';
 
         $this->data['javascript'] = array(
-            'config/usuarios/usuarios'
+            'config/usuarios/index'
         );
 
         $this->load->model('usuarios_model');
@@ -120,6 +120,30 @@ class Usuarios extends MY_Controller {
         }
 
         redirect(site_url().'config/usuarios/dados/'.$usuario['id']);
+    }
+    
+    /**
+     * Função para remover um usuário.
+     *
+     * @param type $usuario_id 
+     */
+    public function remover($usuario_id) {
+        if (is_an_integer($usuario_id)) {
+            $this->load->model('usuarios_model');
+            if ($this->usuarios_model->remover($usuario_id)) {
+                $this->session->set_flashdata(array(
+                    'informativo' => 'Usuário removido com sucesso!',
+                    'informativo_classe' => 'sucesso'
+                ));
+            }
+            else {
+                $this->session->set_flashdata(array(
+                    'informativo' => 'Falha na remoção do usuário!',
+                    'informativo_classe' => 'erro'
+                ));
+            }
+        }
+        redirect(site_url().'config/usuarios');
     }
 
     /**
