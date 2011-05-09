@@ -220,12 +220,15 @@ a {
 
 /* Configurações */
 #lista_configuracoes {
-    width: 500px;
+    width: 100%;
     margin: 10px auto;
 }
 
-#lista_configuracoes span {
-    float: right;
+#lista_configuracoes li {
+    display: inline-block;
+    width: 100px;
+    text-align: center;
+    font-size: 12px;
 }
 
 #rodape p {

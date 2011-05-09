@@ -5,9 +5,9 @@
 </p>
 <ul id="lista_configuracoes">
     <li>
-        Usuários
-        <span>
-            <a href="<?php echo site_url(); ?>config/usuarios" title="Gerenciar usuários do sistema">Gerenciar</a>
-        </span>
+        <a href="<?php echo site_url(); ?>config/usuarios" title="Gerenciar usuários do sistema">
+            <img src="<?php echo base_url(); ?>img/icones/config/usuarios.png" />
+            Usuários
+        </a>
     </li>
 </ul>
