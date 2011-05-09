@@ -13,5 +13,5 @@
 <h2>Opções</h2>
 <ul>
     <li>
-        <a href="<?php echo site_url(); ?>config/usuarios/novo" title="Cadastrar um novo usuário">Cadastrar usuário</a></li>
+        <a href="<?php echo site_url(); ?>config/usuarios/novo" title="Cadastrar um novo usuário">Novo usuário</a></li>
 </ul>

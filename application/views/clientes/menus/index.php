@@ -14,6 +14,6 @@
 <h2>Opções</h2>
 <ul>
     <li>
-        <a href="<?php echo site_url(); ?>clientes/novo" title="Cadastrar novo cliente">Adicionar cliente</a>
+        <a href="<?php echo site_url(); ?>clientes/novo" title="Cadastrar novo cliente">Novo cliente</a>
     </li>
 </ul>

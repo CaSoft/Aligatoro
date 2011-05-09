@@ -74,6 +74,7 @@
     </body>
     <!-- Javascript -->
     <script src="<?php echo base_url(); ?>js/jquery-1.5.min.js" type="text/javascript"></script>
+    <script src="<?php echo base_url(); ?>js/jquery.corner.js" type="text/javascript"></script>
     <script src="<?php echo base_url(); ?>js/jquery.maskedinput.js" type="text/javascript"></script>
     <script src="<?php echo base_url(); ?>js/jquery.validate.min.js" type="text/javascript"></script>
     <script src="<?php echo base_url(); ?>js/jquery.validate.cpfcnpj.js" type="text/javascript"></script>
@@ -88,6 +89,8 @@
 
             // Máscara para campos da classe fone
             $('.fone').mask('(99)9999-9999');
+            
+            $('input[type=submit], input[type=button], #menu_lateral ul li').corner('8px');
         });
     </script>
 

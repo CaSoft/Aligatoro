@@ -18,6 +18,7 @@ input[type=submit], input[type=button] {
     font-size: 16px;
     font-weight: bold;
     padding: 0px 10px;
+    text-align: center;
 }
 
 input[type=text], input[type=password], select {

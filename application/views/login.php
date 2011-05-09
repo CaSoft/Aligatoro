@@ -39,5 +39,11 @@
         </div>
     </body>
     <script src="<?php echo base_url(); ?>js/jquery-1.5.min.js" type="text/javascript"></script>
+    <script src="<?php echo base_url(); ?>js/jquery.corner.js" type="text/javascript"></script>
     <script src="<?php echo base_url(); ?>js/login.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready( function() {
+            $('input[type=submit], input[type=button], #menu_lateral ul li').corner('8px');
+        });
+    </script>
 </html>
