@@ -5,12 +5,12 @@ body {
 }
 
 #caixa {
-    width: 274px;
-    height: 136px;
+    width: 538px;
+    height: 290px;
     margin: 200px auto 0px auto;
     background-image: url(../img/template_login/caixa.png);
     background-repeat: no-repeat;
-    padding: 10px 18px 17px 16px;
+    padding: 10px 50px 17px 30px;
 }
 
 form {
@@ -25,7 +25,8 @@ label {
     font-weight: bold;
     clear: both;
     height: 30px;
-    width: 250px;
+    width: 100%;
+    font-size: 22px;
 }
 
 input {
@@ -33,14 +34,22 @@ input {
 }
 
 input[type=text], input[type=password] {
-    width: 190px;
+    width: 100%;
+    font-size: 30px;
+    margin-bottom: 10px;
 }
 
 input[type=submit] {
-    margin-right: 13px;
+    font-size: 22px;
 }
 
 .erro {
     width: 300px;
     margin: 20px auto 0px auto;
+}
+
+#rodape {
+    text-align: center;
+    font-size: 12px;
+    color: #222;
 }

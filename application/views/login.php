@@ -18,7 +18,7 @@
             <form method="post" action="<?php echo site_url(); ?>login">
                 <fieldset>
                     <label for="login">
-                        Login <input type="text" name="login" id="login" value="" maxlength="10" />
+                        Usuário <input type="text" name="login" id="login" value="" maxlength="10" />
                     </label>
                     <label for="senha">
                         Senha <input type="password" name="senha" id="senha" value="" />
@@ -26,12 +26,17 @@
                     <input type="submit" value="Autenticar" />
                 </fieldset>
             </form>
+            <?php if ($falha_login) : ?>
+                <div class="erro">
+                    <p>Login falhou, tente novamente.</p>
+                </div>
+            <?php endif; ?>
         </div><!-- caixa -->
-        <?php if ($falha_login) : ?>
-            <div class="erro">
-                <p>Login falhou, tente novamente.</p>
-            </div>
-        <?php endif; ?>
+        <div id="rodape">
+            <p><?php echo SYSTEM_NAME; ?></p>
+            <p>Desenvolvido por <a href="http://casoft.info/" title="Site da CaSoft">CaSoft Tecnologia</a> e <a href="http://jacaretecnologia.com.br/" title="Site da Jacaré">Jacaré Tecnologia</a></p>
+            <p>Licenciado pela GNU GPLv3</p>
+        </div>
     </body>
     <script src="<?php echo base_url(); ?>js/jquery-1.5.min.js" type="text/javascript"></script>
     <script src="<?php echo base_url(); ?>js/login.js" type="text/javascript"></script>

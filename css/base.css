@@ -17,6 +17,7 @@ input[type=submit], input[type=button] {
     color: #666;
     font-size: 16px;
     font-weight: bold;
+    padding: 0px 10px;
 }
 
 input[type=text], input[type=password], select {
@@ -24,6 +25,10 @@ input[type=text], input[type=password], select {
     font-size: 22px;
     width: 190px;
     background-color: #FFF;
+}
+
+a {
+    color: #222;
 }
 
 .limpar {
