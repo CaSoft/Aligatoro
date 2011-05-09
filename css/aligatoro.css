@@ -26,7 +26,7 @@ a {
     background-color: #C6E9Af;*/
     margin: 0px 10px 10px 0px;
     text-align: center;
-    font-size: 9px;
+    font-size: 12px;
 }
 
 #opcoes_topo a {
@@ -59,7 +59,7 @@ a {
 #menu_topo ul li a {
     color: #FFF;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 16px;
     text-decoration: none;
 }
 
