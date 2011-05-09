@@ -44,16 +44,23 @@ a {
 
 #menu_topo ul li {
     display: inline-block;
-    margin: 5px 10px;
-    width: 70px;
+    margin: 3px 10px;
+    width: 100px;
     text-align: center;
-    padding: 1px;
+    padding: 20px 1px 1px 1px;
+    height: 40px;
 }
 
 #menu_topo ul li:hover {
     background-color: #71c837;
     border: 1px solid #49b61d;
-    padding: 0px;
+    padding: 19px 0px 0px 0px;
+}
+
+#menu_topo ul li.selecionado {
+    background-color: #71c837;
+    border: 1px solid #49b61d;
+    padding: 19px 0px 0px 0px;
 }
 
 #menu_topo ul li a {

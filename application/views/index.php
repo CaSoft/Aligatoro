@@ -44,7 +44,7 @@
                 <div class="limpar"></div>
                 <div id="menu_topo">
                     <ul>
-                        <li>
+                        <li id="menu_topo_clientes">
                             <a href="<?php echo site_url(); ?>clientes" title="Controle de clientes">Clientes</a>
                         </li>
                     </ul>
@@ -96,6 +96,8 @@
             $('.fone').mask('(99)9999-9999');
             
             $('input[type=submit], input[type=button], #menu_lateral ul li').corner('8px');
+            
+            $('#menu_topo_<?php echo $menu_ativo; ?>').addClass('selecionado');
         });
     </script>
 

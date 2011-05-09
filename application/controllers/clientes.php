@@ -21,12 +21,14 @@
 class Clientes extends MY_Controller {
     public function __construct() {
         parent::__construct();
+        
+        $this->data['menu_ativo'] = 'clientes';
     }
 
     public function index() {
-        $this->data['titulo_pagina'] = 'Controle de clientes';
-        $this->data['view'] = 'clientes/index';
-        $this->data['menu'] = 'clientes/menus/index';
+        $this->data['titulo_pagina']    = 'Controle de clientes';
+        $this->data['view']             = 'clientes/index';
+        $this->data['menu']             = 'clientes/menus/index';
         
         $this->data['javascript'] = array(
             'clientes/index'
