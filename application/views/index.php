@@ -29,6 +29,12 @@
                         </a>
                     </div>
                     <div>
+                        <a href="<?php echo site_url(); ?>painel/meus_dados" title="Alterar meus dados">
+                            <img src="<?php echo base_url(); ?>img/icones/dados_usuario_grande.png" alt="Meus dados" /><br />
+                            Meus dados
+                        </a>
+                    </div>
+                    <div>
                         <a href="<?php echo site_url(); ?>config" title="Configurações do sistema">
                             <img src="<?php echo base_url(); ?>img/icones/config.png" alt="Configurações" /><br />
                             Configurações
@@ -54,8 +60,7 @@
             </div><!-- menu_lateral -->
             <div id="conteudo">
                 <div id="info_usuario">
-                    <p>Olá, <?php echo $usuario['nome']; ?> // <a href="<?php echo site_url(); ?>painel/meus_dados" title="Alterar meus dados">Meus Dados</a></p>
-                    <p><?php echo $data_topo; ?></p>
+                    <p>Olá, <?php echo $usuario['nome']; ?>! Hoje é <?php echo $data_topo; ?></p>
                 </div>
                 <?php if ($this->session->flashdata('informativo')) : ?>
                     <div id="informativo" class="<?php echo $this->session->flashdata('informativo_classe'); ?>">
