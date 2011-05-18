@@ -19,6 +19,7 @@ input[type=submit], input[type=button] {
     font-weight: bold;
     padding: 0px 10px;
     text-align: center;
+    cursor: pointer;
 }
 
 input[type=text], input[type=password], select {

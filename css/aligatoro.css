@@ -133,6 +133,31 @@ a {
     font-size: 16px;
 }
 
+#menu_lateral .form_pesquisa {
+}
+
+#menu_lateral .form_pesquisa h2 {
+    font-size: 30px;
+}
+
+#menu_lateral .form_pesquisa input[type=text] {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#menu_lateral .form_pesquisa .radios_pesquisa {
+    display: inline-block;
+    width: 86px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #FFF;
+}
+
+#menu_lateral .form_pesquisa .radios_pesquisa input[type=radio] { 
+    display: inline-block;
+    margin-right: 3px;
+}
+
 #corpo {
     width: 950px;
     margin: 0px auto;
