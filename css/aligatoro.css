@@ -180,10 +180,18 @@ a {
     color: #078307;
 }
 
+#conteudo h1 {
+    color: #078307;
+    font-size: 22px;
+    font-weight: bold;
+    margin: 8px 0px;
+}
+
 #conteudo h2 {
     color: #078307;
     font-size: 18px;
     font-weight: bold;
+    margin: 5px 0px;
 }
 
 #conteudo form label {

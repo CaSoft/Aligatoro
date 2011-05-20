@@ -54,7 +54,9 @@
             <div id="menu_lateral">
                 <div class="tamanho_vertical"></div>
                 <div class="itens">
-                    <?php $this->load->view($menu); ?>
+                    <?php if (isset($menu)) : ?>
+                        <?php $this->load->view($menu); ?>
+                    <?php endif; ?>
                 </div>
                 <div class="limpar"></div>
             </div><!-- menu_lateral -->

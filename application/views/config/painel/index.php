@@ -4,10 +4,16 @@
     alguma opção utilize as opções abaixo.
 </p>
 <ul id="lista_configuracoes">
-    <li>
+     <li>
         <a href="<?php echo site_url(); ?>config/usuarios" title="Gerenciar usuários do sistema">
-            <img src="<?php echo base_url(); ?>img/icones/config/usuarios.png" />
+            <img src="<?php echo base_url(); ?>img/icones/config/usuarios.png" alt="Usuários" />
             Usuários
+        </a>
+    </li>
+   <li>
+        <a href="<?php echo site_url(); ?>config/referencias" title="Gerenciar referências de contato">
+            <img src="<?php echo base_url(); ?>img/icones/config/referencia.png" alt="Referências" />
+            Referências
         </a>
     </li>
 </ul>

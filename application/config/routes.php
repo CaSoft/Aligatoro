@@ -40,8 +40,8 @@
 
 $route['logout'] = 'login/logout';
 
-$route['default_controller'] = "painel";
-$route['404_override'] = '';
+$route['default_controller'] = 'painel';
+$route['404_override'] = 'paginas/nao_encontrada';
 
 
 /* End of file routes.php */
