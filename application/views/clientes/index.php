@@ -1,5 +1,13 @@
 <?php if ($texto_pesquisa_clientes == '') : ?>
-    <h2>Exibindo últimos clientes cadastrados</h2>
+    <h2>Exibindo clientes cadastrados</h2>
+    <div class="paginacao">
+        <?php if ($paginacao > 1) : ?>
+            <a href="<?php echo site_url(); ?>clientes/index/<?php echo $paginacao - 1; ?>" title="Voltar uma página">&lt; Página anterior</a>&nbsp;&nbsp;
+        <?php endif; ?>
+        <?php if ($paginacao < $paginacao_ultima) : ?>
+            <a href="<?php echo site_url(); ?>clientes/index/<?php echo $paginacao + 1; ?>" title="Avençar uma página">Próxima página &gt;</a>
+        <?php endif; ?>
+    </div>
 <?php else: ?>
     <?php if (count($clientes) == 0) : ?>
         <h2>Sua pesquisa não retornou resultados</h2>

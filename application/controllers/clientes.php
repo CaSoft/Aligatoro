@@ -25,10 +25,12 @@ class Clientes extends MY_Controller {
         $this->data['menu_ativo'] = 'clientes';
     }
 
-    public function index() {
+    public function index($paginacao = 1) {
         $this->data['titulo_pagina']    = 'Controle de clientes';
         $this->data['view']             = 'clientes/index';
         $this->data['menu']             = 'clientes/menus/index';
+        $this->data['paginacao']        = $paginacao;
+        $registros_por_pagina           = 1;
         
         $this->data['javascript'] = array(
             'clientes/index'
@@ -42,7 +44,8 @@ class Clientes extends MY_Controller {
         }
         else {
             $this->data['texto_pesquisa_clientes'] = '';
-            $this->data['clientes'] = $this->clientes_model->pegar_ultimos_cadastrados(10);
+            $this->data['clientes'] = $this->clientes_model->pegar_paginacao($paginacao, $registros_por_pagina);
+            $this->data['paginacao_ultima'] = round($this->clientes_model->pegar_quantidade_clientes() / $registros_por_pagina);
         }
 
         $this->load->view('index', $this->data);

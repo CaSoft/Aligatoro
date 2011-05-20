@@ -101,6 +101,29 @@ class Clientes_model extends CI_Model {
 
         return $query->result_array();
     }
+
+    /**
+     * Função que pega os registros dos clientes de forma paginada. 
+     * 
+     * @param integer $pagina 
+     * @param integer $quantidade 
+     * @access public
+     * @return array
+     */
+    public function pegar_paginacao($pagina, $quantidade)
+    {
+        $primeiro = ($pagina - 1) * $quantidade;
+        $this->db->order_by('nome');
+        $this->db->limit($quantidade, $primeiro);
+        $query = $this->db->get('clientes');
+
+        return $query->result_array();
+    }
+
+    public function pegar_quantidade_clientes()
+    {
+        return $this->db->count_all_results('clientes');
+    }
 }
 
 /* End of file clientes_model.php */

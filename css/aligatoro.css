@@ -216,6 +216,10 @@ a {
     width: 100%;
 }
 
+#conteudo .paginacao {
+    text-align: right;
+}
+
 .div_direita {
     text-align: right;
 }
