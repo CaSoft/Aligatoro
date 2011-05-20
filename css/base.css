@@ -67,3 +67,7 @@ img.clicavel {
     color: #008000;
     border: 1px solid #8ebd78;
 }
+
+strong {
+    font-weight: bold;
+}

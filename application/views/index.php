@@ -62,7 +62,7 @@
             </div><!-- menu_lateral -->
             <div id="conteudo">
                 <div id="info_usuario">
-                    <p>Olá, <?php echo $usuario['nome']; ?>! Hoje é <?php echo $data_topo; ?></p>
+                    <p>Olá, <span class="destaque_info"><?php echo $usuario['nome']; ?></span>! Hoje é <?php echo $data_topo; ?></p>
                 </div>
                 <?php if ($this->session->flashdata('informativo')) : ?>
                     <div id="informativo" class="<?php echo $this->session->flashdata('informativo_classe'); ?>">
@@ -97,7 +97,7 @@
             // Máscara para campos da classe fone
             $('.fone').mask('(99)9999-9999');
             
-            $('input[type=submit], input[type=button], #menu_lateral ul li').corner('8px');
+            $('input[type=submit], input[type=button], #menu_lateral ul li, #menu_topo a').corner('8px');
             
             $('#menu_topo_<?php echo $menu_ativo; ?>').addClass('selecionado');
         });

@@ -64,7 +64,7 @@ class MY_Controller extends CI_Controller {
 
         $mes = date('m') + 0; // Meio gambiarra para pegar sem o 0...
 
-        $this->data['data_topo'] = $dias_semana[date('w')].', '.date('d').' de '.$meses[$mes].' de '.date('Y');
+        $this->data['data_topo'] = '<strong>'.$dias_semana[date('w')].'</strong>'.', <strong>'.date('d').'</strong>'.' de <strong>'.$meses[$mes].'</strong> de <strong>'.date('Y').'</strong>';
         
         $this->data['menu_ativo'] = '';
     }

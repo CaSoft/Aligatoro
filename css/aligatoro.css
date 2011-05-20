@@ -34,7 +34,7 @@ a {
 }
 
 #menu_topo {
-    background-color: #2BA12B;
+    background-color: #00B433;
     background-image: url(../img/template/fundo_menu_topo.png);
     background-repeat: repeat-x;
     width: 750px;
@@ -47,31 +47,36 @@ a {
     margin: 3px 10px;
     width: 100px;
     text-align: center;
-    padding: 20px 1px 1px 1px;
-    height: 40px;
+    padding: 11px 1px 1px 1px;
+    height: 30px;
+    border: 1px solid #AAA;
+    background-color: #b7b7b7;
+    background-image: url(../img/template/fundo_botoes_menu.png);
+    background-repeat: repeat-x;
+    color: #666;
+    font-weight: bold;
 }
 
 #menu_topo ul li a:hover {
-    background-color: #71c837;
-    border: 1px solid #49b61d;
-    padding: 19px 0px 0px 0px;
+    border: 1px solid #555;
+    padding: 11px 1px 1px 1px;
+    background-color: #b7b7b7;
+    background-image: url(../img/template/fundo_botoes_menu_hover.png);
+    background-repeat: repeat-x;
+    color: #FFF;
 }
 
 #menu_topo ul li a.selecionado {
-    background-color: #71c837;
-    border: 1px solid #49b61d;
-    padding: 19px 0px 0px 0px;
-}
-
-#menu_topo ul li a {
+    border: 1px solid #555;
+    padding: 11px 1px 1px 1px;
+    background-color: #b7b7b7;
+    background-image: url(../img/template/fundo_botoes_menu_hover.png);
+    background-repeat: repeat-x;
     color: #FFF;
-    font-weight: bold;
-    font-size: 16px;
-    text-decoration: none;
 }
 
 #menu_lateral {
-    background-color: #2CA02C;
+    background-color: #00B135;
     background-image: url(../img/template/fundo_menu_lateral.png);
     background-repeat: repeat-y;
     width: 180px;
@@ -171,9 +176,15 @@ a {
     margin: 6px 0px 6px 0px;
 }
 
+.destaque_info {
+    color: #00B433;
+    font-weight: bold;
+}
+
 #conteudo {
     width: 740px;
     float: right;
+    font-size: 18px;
 }
 
 #conteudo a {

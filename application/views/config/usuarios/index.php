@@ -27,14 +27,14 @@
                 <td><?php echo $usuario['email']; ?></td>
                 <td class="alinha_centro"><img src="<?php echo base_url(); ?>img/icones/<?php echo ($usuario['ativo'] == '1') ? 'sim' : 'nao'; ?>.png" alt="<?php echo ($usuario['ativo'] == '1') ? 'Sim' : 'Não'; ?>" /></td>
                 <td class="alinha_direita">
-                    <img src="<?php echo base_url(); ?>img/icones/remocao.png" class="clicavel" onclick="remover_usuario(<?php echo $usuario['id']; ?>);" />
-                    &nbsp;&nbsp;&nbsp;
                     <a href="<?php echo site_url(); ?>config/usuarios/dados/<?php echo $usuario['id']; ?>" title="Ver os dados do usuário">
                         <img src="<?php echo base_url(); ?>img/icones/ver.png" alt="Ver os dados do usuário" />
                     </a>
                     <a href="<?php echo site_url(); ?>config/usuarios/editar/<?php echo $usuario['id']; ?>" title="Editar dados do usuário">
                         <img src="<?php echo base_url(); ?>img/icones/editar.png" alt="Editar dados do usuário" />
                     </a>
+                    &nbsp;&nbsp;&nbsp;
+                    <img src="<?php echo base_url(); ?>img/icones/remocao.png" class="clicavel" onclick="remover_usuario(<?php echo $usuario['id']; ?>);" />
                 </td>
             </tr>
         <?php endforeach; ?>
