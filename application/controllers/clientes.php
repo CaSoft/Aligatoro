@@ -30,7 +30,7 @@ class Clientes extends MY_Controller {
         $this->data['view']             = 'clientes/index';
         $this->data['menu']             = 'clientes/menus/index';
         $this->data['paginacao']        = $paginacao;
-        $registros_por_pagina           = 1;
+        $registros_por_pagina           = 10;
         
         $this->data['javascript'] = array(
             'clientes/index'
