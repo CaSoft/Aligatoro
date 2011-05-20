@@ -44,8 +44,8 @@
                 <div class="limpar"></div>
                 <div id="menu_topo">
                     <ul>
-                        <li id="menu_topo_clientes">
-                            <a href="<?php echo site_url(); ?>clientes" title="Controle de clientes">Clientes</a>
+                        <li>
+                            <a id="menu_topo_clientes" href="<?php echo site_url(); ?>clientes" title="Controle de clientes">Clientes</a>
                         </li>
                     </ul>
                 </div><!-- menu_topo -->

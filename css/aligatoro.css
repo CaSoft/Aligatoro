@@ -42,7 +42,7 @@ a {
     text-align: left;
 }
 
-#menu_topo ul li {
+#menu_topo ul li a {
     display: inline-block;
     margin: 3px 10px;
     width: 100px;
@@ -51,13 +51,13 @@ a {
     height: 40px;
 }
 
-#menu_topo ul li:hover {
+#menu_topo ul li a:hover {
     background-color: #71c837;
     border: 1px solid #49b61d;
     padding: 19px 0px 0px 0px;
 }
 
-#menu_topo ul li.selecionado {
+#menu_topo ul li a.selecionado {
     background-color: #71c837;
     border: 1px solid #49b61d;
     padding: 19px 0px 0px 0px;
