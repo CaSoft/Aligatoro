@@ -1,13 +1,18 @@
 body {
     background-image: url(../img/template_login/fundo.png);
     background-repeat: repeat-x;
-    background-color: #00B135;
+    background-color: #2ca02c;
+}
+
+#logo_login {
+    width: 250px;
+    margin: 0px auto;
 }
 
 #caixa {
     width: 538px;
     height: 290px;
-    margin: 120px auto 0px auto;
+    margin: 10px auto 0px auto;
     background-image: url(../img/template_login/caixa.png);
     background-repeat: no-repeat;
     padding: 10px 50px 17px 30px;

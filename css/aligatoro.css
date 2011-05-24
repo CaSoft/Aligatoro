@@ -34,7 +34,7 @@ a {
 }
 
 #menu_topo {
-    background-color: #00B433;
+    background-color: #29a329;
     background-image: url(../img/template/fundo_menu_topo.png);
     background-repeat: repeat-x;
     width: 750px;
@@ -76,7 +76,7 @@ a {
 }
 
 #menu_lateral {
-    background-color: #00B135;
+    background-color: #2ba12b;
     background-image: url(../img/template/fundo_menu_lateral.png);
     background-repeat: repeat-y;
     width: 180px;

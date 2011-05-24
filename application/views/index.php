@@ -21,6 +21,7 @@
     <body>
         <div id="corpo">
             <div id="topo">
+                <img src="<?php echo site_url(); ?>img/logo_topo.png" alt="Logo Estrilo" style="float: left;" />
                 <div id="opcoes_topo">
                     <div>
                         <a href="<?php echo site_url(); ?>logout" title="Sair do sistema">
@@ -41,7 +42,6 @@
                         </a>
                     </div>
                 </div>
-                <div class="limpar"></div>
                 <div id="menu_topo">
                     <ul>
                         <li>

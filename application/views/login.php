@@ -14,6 +14,9 @@
         <!-- / CSS -->
     </head>
     <body>
+        <div id="logo_login">
+            <img src="<?php echo base_url(); ?>img/logo_login.png" alt="Logotipo Estrilo" />
+        </div>
         <div id="caixa">
             <form method="post" action="<?php echo site_url(); ?>login">
                 <fieldset>
