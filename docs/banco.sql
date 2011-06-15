@@ -25,6 +25,7 @@ DROP TABLE IF EXISTS `clientes`;
 CREATE TABLE `clientes` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `usuario_id` int(11) NOT NULL,
+  `referencia_id` int(11) NOT NULL,
   `nome` varchar(100) NOT NULL,
   `razao_social` varchar(100) DEFAULT NULL,
   `contato` varchar(100) DEFAULT NULL,
@@ -44,7 +45,11 @@ CREATE TABLE `clientes` (
   `documento` varchar(20) DEFAULT NULL,
   `observacoes` text,
   `datahora` datetime NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `fk_cliente_usuario_id` (`usuario_id`),
+  KEY `fk_cliente_referencia_id` (`referencia_id`),
+  CONSTRAINT `fk_cliente_usuario_id` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios` (`id`),
+  CONSTRAINT `fk_cliente_referencia_id` FOREIGN KEY (`referencia_id`) REFERENCES `referencias` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -54,8 +59,33 @@ CREATE TABLE `clientes` (
 
 LOCK TABLES `clientes` WRITE;
 /*!40000 ALTER TABLE `clientes` DISABLE KEYS */;
-INSERT INTO `clientes` VALUES (1,0,'Maria das Dores','','','maria@dasdores.com','(13)7777-8888','','','','','','','','','','','','','','0000-00-00 00:00:00'),(2,0,'João da Silva','','','','','','','','','','','','','','','','',NULL,'0000-00-00 00:00:00'),(3,0,'Ana Maria Silva','','Teste','anamaria@silva.com','(13)7788-8899','','','','','Rua das Margaridas','','','','','','','','Nova cliente, com observações no cadastro.','0000-00-00 00:00:00'),(4,0,'Carlos Manoel','','','carlos@email.com','(13)7777-9999','','','','','','','','','','','','','Novo cliente, com data e hora de cadastro automático.','2011-02-14 04:14:22'),(5,0,'Antonio Silva','','','','','','','','','','','','','','','','','','2011-03-31 11:31:05');
+INSERT INTO `clientes` VALUES (1,1,1,'Maria das Dores','','','maria@dasdores.com','(13)7777-8888','','','','','','','','','','','','','','0000-00-00 00:00:00'),(2,1,1,'João da Silva','','','','','','','','','','','','','','','','',NULL,'0000-00-00 00:00:00'),(3,1,1,'Ana Maria Silva','','Teste','anamaria@silva.com','(13)7788-8899','','','','','Rua das Margaridas','','','','','','','','Nova cliente, com observações no cadastro.','0000-00-00 00:00:00'),(4,1,2,'Carlos Manoel','','','carlos@email.com','(13)7777-9999','','','','','','','','','','','','','Novo cliente, com data e hora de cadastro automático.','2011-02-14 04:14:22'),(5,1,2,'Antonio Silva','','','','','','','','','','','','','','','','','','2011-03-31 11:31:05');
 /*!40000 ALTER TABLE `clientes` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `referencias`
+--
+
+DROP TABLE IF EXISTS `referencias`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `referencias` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(20) NOT NULL,
+  `ativo` tinyint(1) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `referencias`
+--
+
+LOCK TABLES `referencias` WRITE;
+/*!40000 ALTER TABLE `referencias` DISABLE KEYS */;
+INSERT INTO `referencias` VALUES (1,'Listel',1),(2,'Google AdWords',1),(3,'Jornal do Bairro',0);
+/*!40000 ALTER TABLE `referencias` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -96,4 +126,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2011-04-01 17:16:37
+-- Dump completed on 2011-06-15 13:05:39
