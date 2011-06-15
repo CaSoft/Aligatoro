@@ -23,24 +23,67 @@ class Referencias_model extends CI_Model {
         parent::__construct();
     }
 
-    public function pegar_referencia() {
-        // code...
+    /**
+     * pegar_referencia
+     *
+     * Pega uma referência pelo ID
+     * 
+     * @param integer $referencia_id
+     * @access public
+     * @return array
+     */
+    public function pegar_referencia($referencia_id) {
+        
     }
 
+    /**
+     * pegar_referencias
+     *
+     * Pega todas as referências cadastradas
+     * 
+     * @access public
+     * @return array
+     */
     public function pegar_referencias() {
-        // code...
+        
     }
 
+    /**
+     * pegar_referencias_ativas
+     *
+     * Pegar somente as referências ativas
+     * 
+     * @access public
+     * @return array
+     */
     public function pegar_referencias_ativas() {
-        // code...
+        
     }
 
-    public function gravar() {
-        // code...
+    /**
+     * gravar
+     *
+     * Insere uma nova referência ou atualiza uma existente
+     * 
+     * @param   array   $referencia
+     * @access public
+     * @return integer  O ID da referência
+     */
+    public function gravar($referencia) {
+        
     }
 
-    public function remover() {
-        // code...
+    /**
+     * remover
+     *
+     * Remove uma referência pelo ID
+     * 
+     * @param integer $referencia_id 
+     * @access public
+     * @return boolean
+     */
+    public function remover($referencia_id) {
+        
     }
 }
                                        
