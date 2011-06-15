@@ -88,7 +88,7 @@ class Tests extends CI_Controller {
     public function index() {
         // Running all tests...
         $this->load->library('unit_test');
-        $this->unit->use_strict(TRUE);
+        //$this->unit->use_strict(TRUE);
         $this->_run_all_tests();
         $this->_display_results();
     }
@@ -291,6 +291,18 @@ class Tests extends CI_Controller {
         $this->unit->run($referencia, $nova_referencia, 'Pegar a referência gravada');
 
         unset($nova_referencia); // Mantive o $referencia para usar no teste abaixo
+
+        // Atualizando uma referência
+        $referencia['nome']     = 'Ref TDD';
+        $referencia['ativo']    = 0;
+
+        $this->referencias_model->gravar($referencia);
+
+        $referencia_atualizada = $this->referencias_model->pegar_referencia($referencia['id']);
+
+        $this->unit->run($referencia, $referencia_atualizada, 'Atualização de referência.');
+
+        unset($referencia_atualizada);
 
         // Removendo uma referência.
         $this->referencias_model->remover($referencia['id']);

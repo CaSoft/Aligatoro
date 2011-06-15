@@ -33,7 +33,10 @@ class Referencias_model extends CI_Model {
      * @return array
      */
     public function pegar_referencia($referencia_id) {
-        
+        $this->db->where('id', $referencia_id);
+        $query = $this->db->get('referencias');
+
+        return $query->row_array();
     }
 
     /**
@@ -45,7 +48,9 @@ class Referencias_model extends CI_Model {
      * @return array
      */
     public function pegar_referencias() {
-        
+        $query = $this->db->get('referencias');
+
+        return $query->result_array();
     }
 
     /**
@@ -57,7 +62,10 @@ class Referencias_model extends CI_Model {
      * @return array
      */
     public function pegar_referencias_ativas() {
-        
+        $this->db->where('ativo', 1);
+        $query = $this->db->get('referencias');
+
+        return $query->result_array();       
     }
 
     /**
@@ -70,7 +78,25 @@ class Referencias_model extends CI_Model {
      * @return integer  O ID da referência
      */
     public function gravar($referencia) {
-        
+        $atualiza = FALSE;
+        if (isset($referencia['id'])) {
+            if ($referencia['id'] > 0) {
+                $atualiza = TRUE;
+            }
+        }
+
+        if ($atualiza) {
+            $this->db->where('id', $referencia['id']);
+            $this->db->update('referencias', $referencia);
+        }
+        else {
+            unset($referencia['id']); // Garantindo que não existe o indice ID
+            $this->db->insert('referencias', $referencia);
+
+            $referencia['id'] = $this->db->insert_id();
+        }
+
+        return $referencia['id'];
     }
 
     /**
@@ -83,7 +109,10 @@ class Referencias_model extends CI_Model {
      * @return boolean
      */
     public function remover($referencia_id) {
-        
+        $this->db->where('id', $referencia_id);
+        $this->db->delete('referencias');
+
+        return TRUE;
     }
 }
                                        
