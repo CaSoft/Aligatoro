@@ -236,6 +236,74 @@ class Tests extends CI_Controller {
 
         unset($cliente, $clientes);
     }
+
+    /**
+     * _test_referencias_model
+     *
+     * Testando a model das referências.
+     * 
+     * @access public
+     * @return void
+     */
+    public function _test_referencias_model() {
+        $this->load->model('referencias_model');
+
+        // Pegando uma referência de testes
+        $referencia = $this->referencias_model->pegar_referencia(1); // Pega pelo ID
+
+        $referencia_teste = array(
+            'id'    => 1,
+            'nome'  => 'Listel',
+            'ativo' => 1
+        );
+
+        $this->unit->run($referencia, $referencia_teste, 'Pegar a referência 1 (Listel)');
+
+        unset($referencia, $referencia_teste);
+
+        // Pegando TODAS as referências
+        $referencias = $this->referencias_model->pegar_referencias(); // Tem que retornar três
+
+        $this->unit->run(count($referencias), 3, 'Pegar toas as referências');
+
+        unset($referencias);
+
+        // Pegando as referências ativas
+        $referencias_ativas = $this->referencias_model->pegar_referencias_ativas(); // Tem que retornar duas
+
+        $this->unit->run(count($referencias_ativas), 2, 'Pegar as referências ativas (Listel e AdWords)');
+
+        unset($referencias_ativas);
+
+        // Inserindo uma referência...
+        $nova_referencia = array(
+            'nome'  => 'Referência TDD',
+            'ativo' => 1
+        );
+
+        $nova_referencia['id'] = $this->referencias_model->gravar($nova_referencia);
+
+        $this->unit->run($nova_referencia['id'], 'is_int', 'Gravar uma nova referência');
+
+        // Pegando a referência gravada...
+        $referencia = $this->referencias_model->pegar_referencia($nova_referencia['id']);
+
+        $this->unit->run($referencia, $nova_referencia, 'Pegar a referência gravada');
+
+        unset($nova_referencia); // Mantive o $referencia para usar no teste abaixo
+
+        // Removendo uma referência.
+        $this->referencias_model->remover($referencia['id']);
+
+        // Pegando a mesma referência, tem que vir vazio.
+        $referencia_inexistente = $this->referencias_model->pegar_referencia($referencia['id']);
+        
+        $this->unit->run(count($referencia_inexistente), 0, 'Pegar uma referência inexistente (Array vazio)');
+
+        unset($referencia, $referencia_inexistente);
+
+        // Fim dos testes da referencias_model
+    }
 }
 
 /* End of file tests.php */
