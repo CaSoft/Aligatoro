@@ -11,6 +11,7 @@
         <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/yahoo.css" />
         <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/base.css" />
         <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/aligatoro.css" />
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/south-street/jquery-ui-1.8.14.custom.css" />
         <!-- / CSS -->
 
         <script type="text/javascript">
@@ -82,6 +83,7 @@
     <!-- Javascript -->
     <script src="<?php echo base_url(); ?>js/jquery-1.5.min.js" type="text/javascript"></script>
     <script src="<?php echo base_url(); ?>js/jquery.corner.js" type="text/javascript"></script>
+    <script src="<?php echo base_url(); ?>js/jquery-ui-1.8.14.custom.min.js" type="text/javascript"></script>
     <script src="<?php echo base_url(); ?>js/jquery.maskedinput.js" type="text/javascript"></script>
     <script src="<?php echo base_url(); ?>js/jquery.validate.min.js" type="text/javascript"></script>
     <script src="<?php echo base_url(); ?>js/jquery.validate.cpfcnpj.js" type="text/javascript"></script>
