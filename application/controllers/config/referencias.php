@@ -33,7 +33,10 @@ class Referencias extends MY_Controller {
         //$this->data['javascript'] = array(
         //    'config/referencias/index'
         //);
-        
+
+        $this->load->model('referencias_model');
+        $this->data['referencias'] = $this->referencias_model->pegar_referencias();
+
         $this->load->view('index.php', $this->data);
     }
 }
