@@ -1,6 +1,10 @@
 <h2><?php echo $titulo_pagina; ?></h2>
 <form id="form_cliente" method="post" action="<?php echo site_url(); ?>clientes/gravar">
     <input type="hidden" name="id" value="<?php echo $cliente['id']; ?>" />
+    <div class="div_direita">
+        <input type="button" value="Cancelar" onclick="window.location = '<?php echo site_url(); echo ($cliente['id'] != '0') ? 'clientes/dados/'.$cliente['id'] : 'clientes'; ?>'" />
+        <input type="submit" value="Enviar" />
+    </div>
     <div id="abas">
         <ul>
             <li>
@@ -83,8 +87,4 @@
             </fieldset>
         </div>
     </div><!-- abas -->
-    <div class="div_direita">
-        <input type="button" value="Cancelar" onclick="window.location = '<?php echo site_url(); echo ($cliente['id'] != '0') ? 'clientes/dados/'.$cliente['id'] : 'clientes'; ?>'" />
-        <input type="submit" value="Enviar" />
-    </div>
 </form>
