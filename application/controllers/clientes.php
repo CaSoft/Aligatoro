@@ -21,32 +21,76 @@
 class Clientes extends MY_Controller {
     public function __construct() {
         parent::__construct();
-        
+
         $this->data['menu_ativo'] = 'clientes';
     }
 
-    public function index($paginacao = 1) {
+    /**
+     * index
+     *
+     * Indeice dos clientes. Tem paginação.
+     *
+     * @param string $campo
+     * @param string $valor
+     * @param int $pagina
+     * @access public
+     * @return void
+     */
+    public function index($campo = '_', $valor = '_', $pagina = 0) {
+
+        $campo = urldecode($campo);
+        $valor = urldecode($valor);
+
         $this->data['titulo_pagina']    = 'Controle de clientes';
         $this->data['view']             = 'clientes/index';
         $this->data['menu']             = 'clientes/menus/index';
-        $this->data['paginacao']        = $paginacao;
-        $registros_por_pagina           = 10;
-        
+        $registros_por_pagina           = 2;
+
         $this->data['javascript'] = array(
             'clientes/index'
         );
 
         $this->load->model('clientes_model');
 
-        if ($this->input->post('texto_pesquisa_clientes')) {
-            $this->data['texto_pesquisa_clientes'] = $this->input->post('texto_pesquisa_clientes');
-            $this->data['clientes'] = $this->clientes_model->pesquisar_clientes($this->input->post('tipo_pesquisa_clientes'), $this->input->post('texto_pesquisa_clientes'));
+        $campo_pesquisa = ($this->input->post('tipo_pesquisa_clientes')) ?
+            $this->input->post('tipo_pesquisa_clientes') :
+            $campo;
+        $valor_pesquisa = ($this->input->post('texto_pesquisa_clientes')) ?
+            $this->input->post('texto_pesquisa_clientes') :
+            $valor;
+
+        if ($campo_pesquisa != '_') {
+            // Deve pesquisar
+            $this->data['texto_pesquisa_clientes'] = $valor_pesquisa;
+            $this->data['clientes'] = $this->clientes_model->pesquisar_clientes(
+                $campo_pesquisa,
+                $valor_pesquisa,
+                $pagina,
+                $registros_por_pagina
+            );
+            $total_clientes = $this->clientes_model->pegar_quantidade_clientes_pesquisa(
+                $campo_pesquisa,
+                $valor_pesquisa
+            );
         }
         else {
             $this->data['texto_pesquisa_clientes'] = '';
-            $this->data['clientes'] = $this->clientes_model->pegar_paginacao($paginacao, $registros_por_pagina);
-            $this->data['paginacao_ultima'] = round($this->clientes_model->pegar_quantidade_clientes() / $registros_por_pagina);
+            $this->data['clientes'] = $this->clientes_model->pegar_paginacao($pagina, $registros_por_pagina);
+            $total_clientes = $this->clientes_model->pegar_quantidade_clientes();
         }
+
+        $campo_pesquisa = urlencode($campo_pesquisa);
+        $valor_pesquisa = urlencode($valor_pesquisa);
+
+        $this->load->library('pagination');
+        $this->pagination->initialize(array(
+            'base_url'      => site_url()."clientes/index/{$campo_pesquisa}/{$valor_pesquisa}/",
+            'per_page'      => $registros_por_pagina,
+            'total_rows'    => $total_clientes,
+            'uri_segment'   => 5
+        ));
+
+        $this->data['paginacao'] = $this->pagination->create_links();
 
         $this->load->view('index', $this->data);
     }
@@ -150,16 +194,16 @@ class Clientes extends MY_Controller {
 
         redirect(site_url().'clientes/dados/'.$cliente['id']);
     }
-    
+
     /**
      * Função para remover um cliente
      *
-     * @param integer $cliente_id 
+     * @param integer $cliente_id
      */
     public function remover($cliente_id) {
         if (is_an_integer($cliente_id)) {
             $this->load->model('clientes_model');
-            
+
             if ($this->clientes_model->remover($cliente_id)) {
                 $this->session->set_flashdata(array(
                     'informativo' => 'Cliente removido com sucesso!',

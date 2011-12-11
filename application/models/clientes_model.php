@@ -38,7 +38,7 @@ class Clientes_model extends CI_Model {
 
         return $cliente['id'];
     }
-    
+
     /**
      * Função que remove um cliente do banco de dados.
      *
@@ -49,7 +49,7 @@ class Clientes_model extends CI_Model {
         if (is_an_integer($cliente_id)) {
             $this->db->where('id', $cliente_id);
             $this->db->delete('clientes');
-            
+
             return TRUE;
         }
         return FALSE;
@@ -62,7 +62,7 @@ class Clientes_model extends CI_Model {
      * @param string $valor
      * @return array
      */
-    public function pesquisar_clientes($campo, $valor) {
+    public function pesquisar_clientes($campo, $valor, $pagina, $registros_por_pagina) {
         if ($campo == 'telefone') {
             $this->db->like('telefone1', $valor);
             $this->db->or_like('telefone2', $valor);
@@ -70,6 +70,9 @@ class Clientes_model extends CI_Model {
         else {
             $this->db->like($campo, $valor);
         }
+
+        $this->db->limit($registros_por_pagina, $pagina);
+
         $query = $this->db->get('clientes');
 
         return $query->result_array();
@@ -103,25 +106,46 @@ class Clientes_model extends CI_Model {
     }
 
     /**
-     * Função que pega os registros dos clientes de forma paginada. 
-     * 
-     * @param integer $pagina 
-     * @param integer $quantidade 
+     * Função que pega os registros dos clientes de forma paginada.
+     *
+     * @param integer $pagina
+     * @param integer $quantidade
      * @access public
      * @return array
      */
     public function pegar_paginacao($pagina, $quantidade)
     {
-        $primeiro = ($pagina - 1) * $quantidade;
         $this->db->order_by('nome');
-        $this->db->limit($quantidade, $primeiro);
+        $this->db->limit($quantidade, $pagina);
         $query = $this->db->get('clientes');
 
         return $query->result_array();
     }
 
-    public function pegar_quantidade_clientes()
-    {
+    /**
+     * pegar_quantidade_clientes
+     *
+     * Pega a quantidade total de clientes.
+     *
+     * @access public
+     * @return void
+     */
+    public function pegar_quantidade_clientes() {
+        return $this->db->count_all_results('clientes');
+    }
+
+    /**
+     * pegar_quantidade_clientes_pesquisa
+     *
+     * Conta a quantidade de registros em uma pesquisa.
+     *
+     * @param mixed $campo
+     * @param mixed $valor
+     * @access public
+     * @return void
+     */
+    public function pegar_quantidade_clientes_pesquisa($campo, $valor) {
+        $this->db->like($campo, $valor);
         return $this->db->count_all_results('clientes');
     }
 }
